@@ -43,7 +43,7 @@ Built as a personal project by an embedded systems engineer, it demonstrates fro
 |---|---|
 | **Frontend** | Pure HTML5 · CSS3 · Vanilla JavaScript |
 | **Data Sources** | Marketaux API · Yahoo Finance · RBI · BSE · NSE · ECB · Fed |
-| **Hosting** | Netlify (auto-deploy from Git) |
+| **Hosting** | GitHub Pages (auto-deploy from main branch) |
 | **Dependencies** | Zero — single self-contained HTML file |
 
 ---
@@ -88,7 +88,7 @@ RuDoEu/
 - **Single file architecture** — zero build step, zero dependencies, easy to audit and deploy
 - **Client-side only** — no backend, no server costs, no data storage
 - **API key via localStorage + prompt** — keeps keys out of source code entirely
-- **Netlify deployment** — auto-deploys on every push to main branch
+- **GitHub Pages deployment** — auto-deploys on every push to main branch
 
 ---
 
