@@ -14,11 +14,11 @@ FEEDS = [
 
 CAT_MAP = {
     'stock': 'Stocks', 'share': 'Stocks', 'nifty': 'Stocks', 'sensex': 'Stocks',
-    'nasdaq': 'Stocks', 's&p': 'Stocks', 'dow': 'Stocks', 'dax': 'Stocks',
+    'nasdaq': 'Stocks', 'dow': 'Stocks', 'dax': 'Stocks',
     'rupee': 'Currency', 'dollar': 'Currency', 'euro': 'Currency', 'forex': 'Currency',
     'oil': 'Energy', 'crude': 'Energy', 'brent': 'Energy', 'opec': 'Energy',
     'rbi': 'Central Bank', 'fed': 'Central Bank', 'ecb': 'Central Bank', 'rate': 'Central Bank',
-    'gold': 'Commodities', 'silver': 'Commodities', 'copper': 'Commodities',
+    'gold': 'Commodities', 'silver': 'Commodities',
     'ipo': 'IPO', 'gdp': 'Economy', 'inflation': 'Economy', 'recession': 'Economy',
 }
 
@@ -31,9 +31,9 @@ def get_cat(title):
 
 def clean(text):
     text = re.sub(r'<[^>]+>', '', text or '')
-    text = re.sub(r'["'\\\\]', '', text)
-    text = text.replace('\n', ' ').replace('\r', '')
-    return text[:180].strip()
+    text = re.sub(r"[\x27\x22\\]", '', text)
+    text = text.replace('\n', ' ').replace('\r', '').strip()
+    return text[:180]
 
 def ago(entry):
     try:
@@ -42,12 +42,12 @@ def ago(entry):
             return 'Today'
         diff = int((time.time() - time.mktime(pub)) / 60)
         if diff < 60:
-            return f'{diff}m ago'
+            return str(diff) + 'm ago'
         elif diff < 1440:
-            return f'{diff // 60}h ago'
+            return str(diff // 60) + 'h ago'
         else:
-            return f'{diff // 1440}d ago'
-    except:
+            return str(diff // 1440) + 'd ago'
+    except Exception:
         return 'Today'
 
 articles = []
@@ -68,36 +68,39 @@ for feed in FEEDS:
             count += 1
             if count >= 5:
                 break
-        print(f"OK {feed['src']}: {count} articles")
+        print('OK ' + feed['src'] + ': ' + str(count) + ' articles')
     except Exception as e:
-        print(f"FAIL {feed['src']}: {e}")
+        print('FAIL ' + feed['src'] + ': ' + str(e))
 
 ind = [a for a in articles if a['r'] == 'ind'][:6]
 eu  = [a for a in articles if a['r'] == 'eu'][:5]
 usa = [a for a in articles if a['r'] == 'usa'][:6]
 final = ind + eu + usa
-print(f"Total: {len(final)} ({len(ind)} IND, {len(eu)} EU, {len(usa)} USA)")
+print('Total: ' + str(len(final)) + ' (' + str(len(ind)) + ' IND, ' + str(len(eu)) + ' EU, ' + str(len(usa)) + ' USA)')
 
 if not final:
-    print("No articles - skipping")
+    print('No articles fetched - skipping update')
     exit(0)
 
 def to_js(a):
-    return ("{r:'"+a['r']+"',h:'"+a['h']+"',b:'"+a['b']+"',cat:'"+a['cat']+"',src:'"+a['src']+"',url:'"+a['url']+"',t:'"+a['t']+"',type:'builtin'}")
+    return '{r:' + repr(a['r']) + ',h:' + repr(a['h']) + ',b:' + repr(a['b']) + ',cat:' + repr(a['cat']) + ',src:' + repr(a['src']) + ',url:' + repr(a['url']) + ',t:' + repr(a['t']) + ',type:' + repr(a['type']) + '}'
 
-js_array = "[\n  " + ",\n  ".join(to_js(a) for a in final) + "\n]"
+js_array = '[\n  ' + ',\n  '.join(to_js(a) for a in final) + '\n]'
 
 with open('index.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
-pattern = r'var BUILTIN=\[[\s\S]*?\];'
-new_builtin = f'var BUILTIN={js_array};'
-updated = __import__('re').sub(pattern, new_builtin, content)
+start_marker = 'var BUILTIN=['
+end_marker = '];'
+start_idx = content.find(start_marker)
+if start_idx == -1:
+    print('ERROR: BUILTIN marker not found in index.html')
+    exit(1)
+end_idx = content.find(end_marker, start_idx) + len(end_marker)
+new_content = content[:start_idx] + 'var BUILTIN=' + js_array + ';' + content[end_idx:]
 
-if updated == content:
-    print("WARNING: BUILTIN not found")
-else:
-    with open('index.html', 'w', encoding='utf-8') as f:
-        f.write(updated)
-    now = datetime.datetime.now(datetime.timezone.utc).strftime('%b %d, %Y %H:%M UTC')
-    print(f"Updated at {now}")
+with open('index.html', 'w', encoding='utf-8') as f:
+    f.write(new_content)
+
+now = datetime.datetime.now(datetime.timezone.utc).strftime('%b %d, %Y %H:%M UTC')
+print('index.html updated at ' + now)
