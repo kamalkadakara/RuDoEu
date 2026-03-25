@@ -39,13 +39,15 @@ Built as a personal project by an embedded systems engineer, it demonstrates fro
 
 ## Tech Stack
 
-| Layer | Technology | Language |
-|---|---|---|
-| **Frontend** | HTML5, CSS3, Vanilla JavaScript | HTML · CSS · JS |
-| **Backend** | None — fully client-side, no server | — |
-| **Data / APIs** | Marketaux API, RSS Feeds, open.er-api.com (FX rates) | REST / JSON |
-| **Hosting** | GitHub Pages *(initially hosted on Netlify)* | — |
-| **Dependencies** | Zero — single self-contained HTML file | — |
+| Layer | Technology | Language | Lines of Code |
+|---|---|---|---|
+| **Frontend – HTML** | HTML5 (structure, layout, components) | HTML | ~292 |
+| **Frontend – CSS** | CSS3 (variables, animations, responsive) | CSS | ~178 |
+| **Frontend – JS** | Vanilla JavaScript (data, logic, UI) | JavaScript | ~925 |
+| **Backend** | None — fully client-side, no server | — | — |
+| **Data / APIs** | RSS Feeds · open.er-api.com · Marketaux API | REST / JSON | — |
+| **Hosting** | GitHub Pages *(initially on Netlify)* | — | — |
+| **Dependencies** | Zero — single self-contained HTML file | — | **1,727 total** |
 
 
 ## Setup & Usage
