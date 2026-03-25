@@ -21,7 +21,7 @@ jobs:
         run: pip install requests feedparser
 
       - name: Fetch news and update index.html
-        run: python .github/scripts/update_news.py
+        run: python .github/scripts/fetch_news.py
 
       - name: Commit if changed
         run: |
