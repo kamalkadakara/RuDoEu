@@ -43,7 +43,7 @@ Built as a personal project by an embedded systems engineer, it demonstrates fro
 |---|---|
 | **Frontend** | Pure HTML5 · CSS3 · Vanilla JavaScript |
 | **Data Sources** | Marketaux API · Yahoo Finance · RBI · BSE · NSE · ECB · Fed |
-| **Hosting** | GitHub Pages (auto-deploy from main branch) |
+| **Hosting** | GitHub Pages (auto-deploy from main branch) *(initially hosted on Netlify)* |
 | **Dependencies** | Zero — single self-contained HTML file |
 
 ---
@@ -61,17 +61,7 @@ cd RuDoEu
 open index.html
 ```
 
-### API Key (for live news)
-The news feed requires a free Marketaux API key:
-
-1. Sign up free at [https://www.marketaux.com](https://www.marketaux.com)
-2. Open the dashboard — you will be prompted to enter your key on first load
-3. Your key is stored in **your browser's localStorage only** — it is never hardcoded, never transmitted to any server other than Marketaux directly
-
-> ⚠️ Never commit your API key to Git. The key is intentionally stored client-side only.
-
----
-
+#
 ## Project Structure
 
 ```
