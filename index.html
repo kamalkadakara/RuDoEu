@@ -119,6 +119,9 @@ a{color:var(--AC);text-decoration:none;}
 .n-card.ind{border-left:5px solid var(--RU);box-shadow:var(--sh),-3px 0 14px rgba(245,166,35,.18);}
 .n-card.eu{border-left:5px solid var(--DO);box-shadow:var(--sh),-3px 0 14px rgba(42,191,191,.18);}
 .n-card.usa{border-left:5px solid var(--Eu);box-shadow:var(--sh),-3px 0 14px rgba(27,45,107,.2);}
+#newsBox[data-region="ind"] .n-card:not(.ind){display:none!important;}
+#newsBox[data-region="eu"] .n-card:not(.eu){display:none!important;}
+#newsBox[data-region="usa"] .n-card:not(.usa){display:none!important;}
 .n-meta{display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap;}
 .n-reg{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:3px;}
 .n-reg.ind{background:var(--INd);color:var(--IN);}.n-reg.eu{background:var(--EUd);color:var(--EU);}.n-reg.usa{background:var(--USd);color:var(--US);}
@@ -1198,7 +1201,7 @@ function render(){
   setTimeout(colorMarketTables,100);
 }
 
-function switchTab(r,el){REG=r;CAT='All';Q='';closeInlinePanel();var si=document.getElementById('searchIn');if(si)si.value='';document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});var econBtn=document.getElementById('catEconomy');if(econBtn)econBtn.classList.add('active');document.querySelectorAll('.tab').forEach(function(b){b.className='tab '+b.id.replace('tab','').toLowerCase();});el.className='tab active '+r;render();}
+function switchTab(r,el){REG=r;CAT='All';Q='';var nb=document.getElementById('newsBox');if(nb)nb.setAttribute('data-region',r==='all'?'':r);closeInlinePanel();var si=document.getElementById('searchIn');if(si)si.value='';document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});var econBtn=document.getElementById('catEconomy');if(econBtn)econBtn.classList.add('active');document.querySelectorAll('.tab').forEach(function(b){b.className='tab '+b.id.replace('tab','').toLowerCase();});el.className='tab active '+r;render();}
 function setReg(r,el){REG=r;CAT='All';Q='';var si=document.getElementById('searchIn');if(si)si.value='';document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});var fc=document.querySelector('.cat-btn');if(fc)fc.classList.add('active');document.querySelectorAll('.r-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');render();}
 function setCat(c,el){CAT=c;closeInlinePanel();document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');render();}
 function doSearch(){Q=document.getElementById('searchIn').value.trim();render();}
