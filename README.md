@@ -39,14 +39,14 @@ Built as a personal project by an embedded systems engineer, it demonstrates fro
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| **Frontend** | Pure HTML5 · CSS3 · Vanilla JavaScript |
-| **Data Sources** | Marketaux API · Yahoo Finance · RBI · BSE · NSE · ECB · Fed |
-| **Hosting** | GitHub Pages (auto-deploy from main branch) *(initially hosted on Netlify)* |
-| **Dependencies** | Zero — single self-contained HTML file |
+| Layer | Technology | Language |
+|---|---|---|
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript | HTML · CSS · JS |
+| **Backend** | None — fully client-side, no server | — |
+| **Data / APIs** | Marketaux API, RSS Feeds, open.er-api.com (FX rates) | REST / JSON |
+| **Hosting** | GitHub Pages *(initially hosted on Netlify)* | — |
+| **Dependencies** | Zero — single self-contained HTML file | — |
 
----
 
 ## Setup & Usage
 
