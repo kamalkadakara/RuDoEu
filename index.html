@@ -1707,7 +1707,7 @@ setTimeout(colorMarketTables,500);
 <script>
 if('serviceWorker' in navigator){
   var SW_CODE=[
-    "const CACHE='rudoeu-v1';",
+    "const CACHE='rudoeu-v3';",
     "const STATIC=['/','index.html'];",
     "self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(STATIC))));",
     "self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));",
