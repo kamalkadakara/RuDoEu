@@ -44,8 +44,8 @@ Built as a personal project by an embedded systems engineer, it demonstrates fro
 | **Frontend – HTML** | HTML5 (structure, layout, components) | HTML | ~292 |
 | **Frontend – CSS** | CSS3 (variables, animations, responsive) | CSS | ~178 |
 | **Frontend – JS** | Vanilla JavaScript (data, logic, UI) | JavaScript | ~925 |
-| **Backend** | None — fully client-side, no server | — | — |
-| **Data / APIs** | RSS Feeds · open.er-api.com · Marketaux API | REST / JSON | — |
+| **Backend** | GitHub Actions (Python script — auto news fetch every 6h) | Python | ~120 |
+| **Data / APIs** | RSS Feeds (server-side) · open.er-api.com · Marketaux API | REST / JSON | — |
 | **Hosting** | GitHub Pages *(initially on Netlify)* | — | — |
 | **Dependencies** | Zero — single self-contained HTML file | — | **1,727 total** |
 
