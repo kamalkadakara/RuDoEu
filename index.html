@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0f172a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-tranhslucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="RuDoEu">
   <link rel="apple-touch-icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='20' fill='%230f172a'/&gt;&lt;text y='.9em' font-size='80'&gt;📊&lt;/text&gt;&lt;/svg&gt;">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
@@ -119,9 +119,6 @@ a{color:var(--AC);text-decoration:none;}
 .n-card.ind{border-left:5px solid var(--RU);box-shadow:var(--sh),-3px 0 14px rgba(245,166,35,.18);}
 .n-card.eu{border-left:5px solid var(--DO);box-shadow:var(--sh),-3px 0 14px rgba(42,191,191,.18);}
 .n-card.usa{border-left:5px solid var(--Eu);box-shadow:var(--sh),-3px 0 14px rgba(27,45,107,.2);}
-#newsBox[data-region="ind"] .n-card:not(.ind){display:none!important;}
-#newsBox[data-region="eu"] .n-card:not(.eu){display:none!important;}
-#newsBox[data-region="usa"] .n-card:not(.usa){display:none!important;}
 .n-meta{display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap;}
 .n-reg{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase;display:inline-flex;align-items:center;gap:3px;}
 .n-reg.ind{background:var(--INd);color:var(--IN);}.n-reg.eu{background:var(--EUd);color:var(--EU);}.n-reg.usa{background:var(--USd);color:var(--US);}
@@ -189,6 +186,14 @@ a{color:var(--AC);text-decoration:none;}
 body.dark-mode{--bg:#070a0f;--s1:#0c1018;--s2:#111720;--s3:#1a2233;--b1:rgba(255,255,255,.06);--b2:rgba(255,255,255,.12);--tx:#e2e8f4;--t2:#8896aa;--t3:#3d4d62;--hdr:#070a0f;}
 @media(max-width:1100px){.layout{grid-template-columns:1fr;}.lsb,.rsb{display:none;}.mkt-tables{grid-template-columns:1fr;}}
 @media(max-width:640px){.content{padding:10px;}.hub-tabs{overflow-x:auto;}}
+
+/* ── TAB REGION FILTER ── */
+#newsBox.show-ind .n-card.eu,
+#newsBox.show-ind .n-card.usa { display:none !important; }
+#newsBox.show-eu .n-card.ind,
+#newsBox.show-eu .n-card.usa { display:none !important; }
+#newsBox.show-usa .n-card.ind,
+#newsBox.show-usa .n-card.eu { display:none !important; }
 </style>
 </head>
 <body class="">
@@ -198,7 +203,7 @@ body.dark-mode{--bg:#070a0f;--s1:#0c1018;--s2:#111720;--s3:#1a2233;--b1:rgba(255
   <div class="ck-btns"><button class="ck-rej" onclick="rejectCookies()">Reject</button><button class="ck-acc" onclick="acceptCookies()">Accept All</button></div>
 </div>
 
-<div class="ticker"><div class="ticker-inner" id="tickerEl"><div class="ti"><span class="sym">SENSEX</span>74,068<span class="up">▲+1.89%</span></div><div class="ti"><span class="sym">NIFTY</span>22,912<span class="up">▲+1.78%</span></div><div class="ti"><span class="sym">S&amp;P500</span>6,534<span class="dn">▼-0.71%</span></div><div class="ti"><span class="sym">NASDAQ</span>21,828<span class="dn">▼-0.54%</span></div><div class="ti"><span class="sym">DAX</span>22,654<span class="up">▲+1.22%</span></div><div class="ti"><span class="sym">FTSE100</span>9,894<span class="dn">▼-0.24%</span></div><div class="ti"><span class="sym">WTI</span>$91.20<span class="dn">▼-3.32%</span></div><div class="ti"><span class="sym">BRENT</span>$98.65<span class="dn">▼-8.64%</span></div><div class="ti"><span class="sym">GOLD</span>$4,416<span class="dn">▼-3.1%</span></div><div class="ti"><span class="sym">BTC</span>$69,927<span class="dn">▼-1.87%</span></div><div class="ti"><span class="sym">USD/INR</span>93.88<span class="dn">▼ATL</span></div><div class="ti"><span class="sym">EUR/INR</span>101.84<span class="dn">▼-0.4%</span></div><div class="ti"><span class="sym">SENSEX</span>74,068<span class="up">▲+1.89%</span></div><div class="ti"><span class="sym">NIFTY</span>22,912<span class="up">▲+1.78%</span></div><div class="ti"><span class="sym">S&amp;P500</span>6,534<span class="dn">▼-0.71%</span></div><div class="ti"><span class="sym">NASDAQ</span>21,828<span class="dn">▼-0.54%</span></div><div class="ti"><span class="sym">DAX</span>22,654<span class="up">▲+1.22%</span></div><div class="ti"><span class="sym">FTSE100</span>9,894<span class="dn">▼-0.24%</span></div><div class="ti"><span class="sym">WTI</span>$91.20<span class="dn">▼-3.32%</span></div><div class="ti"><span class="sym">BRENT</span>$98.65<span class="dn">▼-8.64%</span></div><div class="ti"><span class="sym">GOLD</span>$4,416<span class="dn">▼-3.1%</span></div><div class="ti"><span class="sym">BTC</span>$69,927<span class="dn">▼-1.87%</span></div><div class="ti"><span class="sym">USD/INR</span>93.88<span class="dn">▼ATL</span></div><div class="ti"><span class="sym">EUR/INR</span>101.84<span class="dn">▼-0.4%</span></div></div></div></div></div>
+<div class="ticker"><div class="ticker-inner" id="tickerEl"><div class="ti"><span class="sym">SENSEX</span>73,768<span class="dn">▼-2.00%</span></div><div class="ti"><span class="sym">NIFTY</span>22,819<span class="dn">▼-1.09%</span></div><div class="ti"><span class="sym">S&amp;P500</span>6,369<span class="dn">▼-1.67%</span></div><div class="ti"><span class="sym">NASDAQ</span>20,948<span class="dn">▼-2.15%</span></div><div class="ti"><span class="sym">DOW</span>45,167<span class="dn">▼-1.73%</span></div><div class="ti"><span class="sym">DAX</span>22,360<span class="dn">▼-1.30%</span></div><div class="ti"><span class="sym">FTSE100</span>9,972<span class="dn">▼-1.33%</span></div><div class="ti"><span class="sym">BRENT</span>$110.20<span class="wn">▲+2.00%</span></div><div class="ti"><span class="sym">WTI</span>$102.40<span class="wn">▲+1.85%</span></div><div class="ti"><span class="sym">GOLD</span>$4,457<span class="up">▲+1.09%</span></div><div class="ti"><span class="sym">VIX</span>27.44<span class="wn">▲+8.33%</span></div><div class="ti"><span class="sym">USD/INR</span>94.74<span class="dn">▼ATL</span></div><div class="ti"><span class="sym">SENSEX</span>73,768<span class="dn">▼-2.00%</span></div><div class="ti"><span class="sym">NIFTY</span>22,819<span class="dn">▼-1.09%</span></div><div class="ti"><span class="sym">S&amp;P500</span>6,369<span class="dn">▼-1.67%</span></div><div class="ti"><span class="sym">NASDAQ</span>20,948<span class="dn">▼-2.15%</span></div><div class="ti"><span class="sym">DOW</span>45,167<span class="dn">▼-1.73%</span></div><div class="ti"><span class="sym">DAX</span>22,360<span class="dn">▼-1.30%</span></div><div class="ti"><span class="sym">FTSE100</span>9,972<span class="dn">▼-1.33%</span></div><div class="ti"><span class="sym">BRENT</span>$110.20<span class="wn">▲+2.00%</span></div><div class="ti"><span class="sym">WTI</span>$102.40<span class="wn">▲+1.85%</span></div><div class="ti"><span class="sym">GOLD</span>$4,457<span class="up">▲+1.09%</span></div><div class="ti"><span class="sym">VIX</span>27.44<span class="wn">▲+8.33%</span></div><div class="ti"><span class="sym">USD/INR</span>94.74<span class="dn">▼ATL</span></div></div></div></div></div></div>
 
 <header class="hdr">
   <div style="display:flex;align-items:center;gap:10px;">
@@ -464,7 +469,7 @@ setInterval(getMarketStatus,60000);
       <span onclick="quickSearch('Rupee dollar exchange rate')" style="font-size:10px;font-weight:600;color:#94a3b8;background:var(--s3);border:1px solid var(--b1);border-radius:4px;padding:2px 8px;cursor:pointer;" onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">💱 USD/INR</span>
     </div>
   </div>
-  <div class="breaking" id="breakingBar" style="opacity: 1; transform: translateY(0px); transition: opacity 0.4s, transform 0.4s;"><span class="brk-badge">🔴 BREAKING</span><span class="brk-txt" id="breakingTxt">Sensex down 3,200 pts in 4 sessions · INDIA VIX spikes to 19.76 · HAL, BEL, Mazagon Dock hit 52-week highs · Defense ETF gains 11% this week.</span></div>
+  <div class="breaking" id="breakingBar" style="opacity: 1; transform: translateY(0px); transition: opacity 0.4s, transform 0.4s;"><span class="brk-badge">🔴 BREAKING</span><span class="brk-txt" id="breakingTxt">US-Iran war Day 26 · Brent crude tops $110/barrel · Dow enters correction · Rupee hits all-time low ₹94.74/$ · Sensex -2% Friday · FII outflows $11.37B in March.</span></div>
   
 
   <div class="tabs">
@@ -761,7 +766,7 @@ setInterval(getMarketStatus,60000);
       <a href="https://www.cnbc.com/markets" target="_blank" rel="noopener" style="display:block;font-size:11px;color:#64748b;">CNBC Markets</a>
     </div>
     <div><h4 style="font-size:8px;letter-spacing:2px;color:#475569;text-transform:uppercase;margin-bottom:8px;font-weight:700;">Contact</h4>
-            <a href="mailto:finworldai@gmail.com" style="display:block;font-size:11px;color:#64748b;">finworldai@gmail.com</a>a>
+      <a href="mailto:finworldai@gmail.com" style="display:block;font-size:11px;color:#64748b;">finworldai@gmail.com</a>
     </div>
   </div>
   <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid #1e293b;font-size:10px;color:#475569;">
@@ -769,7 +774,7 @@ setInterval(getMarketStatus,60000);
     <span>RSS feeds · Not financial advice</span>
   </div>
 </footer>
-<script >
+<script>
 var REG='all',CAT='All',Q='',ACTIVE_PANEL=null;
 var apiKey='';
 var RSS_ARTICLES=[],LIVE_ARTICLES=[],RT=null,FX_RATES={};
@@ -1137,7 +1142,7 @@ drawGauge('fgInd',26);drawGauge('fgUSA',31);drawGauge('fgGlb',28);
 
 // ── LIVE FX ──
 function fetchLiveFX(){fetch('https://open.er-api.com/v6/latest/INR').then(function(r){return r.json();}).then(function(d){if(d.result!=='success')throw 0;FX_RATES=d.rates;var r=d.rates,s=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};s('fx-usd','₹'+(1/r.USD).toFixed(2));s('fx-eur','₹'+(1/r.EUR).toFixed(2));s('fx-gbp','₹'+(1/r.GBP).toFixed(2));s('fx-jpy','₹'+(1/r.JPY).toFixed(4));s('fx-aed','₹'+(1/r.AED).toFixed(2));s('sb-usd','₹'+(1/r.USD).toFixed(2));s('sb-eur','₹'+(1/r.EUR).toFixed(2));s('sb-gbp','₹'+(1/r.GBP).toFixed(2));s('sb-jpy','₹'+(1/r.JPY).toFixed(4));s('sb-aed','₹'+(1/r.AED).toFixed(2));s('bs-usd','₹'+(1/r.USD).toFixed(2));s('bs-eur','₹'+(1/r.EUR).toFixed(2));s('bs-gbp','₹'+(1/r.GBP).toFixed(2));s('bs-jpy','₹'+(1/r.JPY).toFixed(4));s('bs-aed','₹'+(1/r.AED).toFixed(2));if(r.SGD)s('bs-sgd','₹'+(1/r.SGD).toFixed(2));var now=new Date(),ts=now.getHours()+':'+(now.getMinutes()<10?'0':'')+now.getMinutes();var el=document.getElementById('fxUpdated');if(el)el.textContent='Live · '+ts;var el2=document.getElementById('sb-fx-time');if(el2)el2.textContent=ts;var el3=document.getElementById('bs-fx-time');if(el3)el3.textContent='Live · '+ts;}).catch(function(){});}
-fetchLiveFX();setInterval(fetchLiveFX,300000);render();fetchAllRSS();
+fetchLiveFX();setInterval(fetchLiveFX,300000);
 
 // ── RSS ──
 var FEEDS=[{url:'https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms',r:'ind',src:'Economic Times'},{url:'https://www.moneycontrol.com/rss/MCtopnews.xml',r:'ind',src:'Moneycontrol'},{url:'https://feeds.bbci.co.uk/news/business/rss.xml',r:'eu',src:'BBC Business'},{url:'https://www.cnbc.com/id/10000664/device/rss/rss.html',r:'usa',src:'CNBC Markets'}];
@@ -1149,25 +1154,24 @@ function fetchAllRSS(){return Promise.all(FEEDS.map(function(f){return fetchRSS(
 function fetchMarketaux(){if(!apiKey)return Promise.resolve([]);return Promise.all([{q:'india finance',r:'ind'},{q:'usa economy stock',r:'usa'},{q:'europe ECB economy',r:'eu'}].map(function(s){return fetch('https://api.marketaux.com/v1/news/all?language=en&limit=3&api_token='+apiKey+'&search='+encodeURIComponent(s.q)).then(function(r){return r.json();}).then(function(d){if(d.error)return[];return(d.data||[]).map(function(it){return{r:s.r,h:it.title||'',b:(it.description||'').substring(0,180),cat:'Live News',src:it.source||'Marketaux',url:it.url||'#',t:ago(it.published_at),type:'live'};});}).catch(function(){return[];});})).then(function(res){LIVE_ARTICLES=[];res.forEach(function(a){LIVE_ARTICLES=LIVE_ARTICLES.concat(a);});return LIVE_ARTICLES;});}
 
 // ── BUILTIN ARTICLES ──
-// -- BUILTIN ARTICLES -- Updated Mar 24, 2026
+// -- BUILTIN ARTICLES -- Updated Mar 27, 2026
 var BUILTIN=[
-  {r:'ind',h:'Mukesh Ambani’s mega IPO Reliance Jio is said to set bank fees in line with NSE',b:'Reliance Industries Ltd. is planning a massive IPO for its telecom arm, Jio Platforms Ltd. The company is setting investment banking fees at a competitive 0.65% of the issue size. ',cat:'IPO',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/ipos/fpos/mukesh-ambanis-mega-ipo-reliance-jio-is-said-to-set-bank-fees-in-line-with-nse/articleshow/129851939.cms',t:'46m ago',type:'builtin'},
-  {r:'ind',h:'US stocks: Citigroup dismisses report of potential US regional bank acquisition',b:'Citigroup has denied a Bloomberg report suggesting it was considering acquiring a U.S. regional bank, stating the speculation is baseless. The bank emphasized its sole focus remain',cat:'Stocks',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-citigroup-dismisses-report-of-potential-us-regional-bank-acquisition/articleshow/129851500.cms',t:'1h ago',type:'builtin'},
-  {r:'ind',h:'Rupee crosses 94/$1 mark for the first time, ends at 94.81/$ amid volatile crude prices due to US-Iran war',b:'The Indian rupee hit a record low of 94.81 against the dollar, nearing 95, as surging crude oil prices and a potentially prolonged West Asia conflict weighed on the currency. Mild ',cat:'Currency',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-crosses-94/1-mark-for-the-first-time-ends-at-94-81/-amid-volatile-crude-prices-due-to-us-iran-war/articleshow/129851183.cms',t:'2h ago',type:'builtin'},
-  {r:'ind',h:'US Stocks: Rocket Pharma shares fall 15% despite FDA nod for childhood disorder treatment',b:'Rocket Pharmaceuticals shares dropped significantly after gaining FDA approval for Kresladi, a gene therapy for a rare childhood immune disorder. Investors are concerned about prac',cat:'Stocks',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-rocket-pharma-shares-fall-15-despite-fda-nod-for-childhood-disorder-treatment/articleshow/129851108.cms',t:'2h ago',type:'builtin'},
-  {r:'ind',h:'US stocks: US Feds Anna Paulson says Iran war increases risks to growth, inflation',b:'Philadelphia Federal Reserve President \u200bAnna Paulson said on \u200bFriday the Iran war is creating challenges for \u200bthe U.S. economy, while stopping short of saying what that might mean ',cat:'Stocks',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/us-stocks/news/us-stocks-us-feds-anna-paulson-says-iran-war-increases-risks-to-growth-inflation/articleshow/129850851.cms',t:'2h ago',type:'builtin'},
-  {r:'ind',h:'Sensex, Nifty wobbly; Hind Zinc, SBI, Force Motors most active',b:'Asian Paints, SBI, Tata Motors, HUL and Maruti Suzuki are top gainers while ONGC, Axis Bank, MM, Bajaj Auto and Hero MotoCorp are major losers in the Sensex.',cat:'Stocks',src:'Moneycontrol',url:'http://www.moneycontrol.com/news/local-markets/sensex-nifty-wobbly-hind-zinc-sbi-force-motors-most-active_7577801.html',t:'3460d ago',type:'builtin'},
-  {r:'eu',h:'Asda boss rejects profiteering claims as petrol price tops 150p',b:'Motorists are facing higher fuel prices ahead of Easter break due to the conflict in the Middle East, the RAC says.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/cdxdnd87v78o?at_medium=RSS&at_campaign=rss',t:'12m ago',type:'builtin'},
-  {r:'eu',h:'Just Eat and Autotrader among firms investigated in fake reviews probe',b:'The UKs competition watchdog says it is looking at five firms in its investigation into misleading online reviews.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/cj37eeyz0epo?at_medium=RSS&at_campaign=rss',t:'6h ago',type:'builtin'},
-  {r:'eu',h:'Ripple of fear over Iran war hits consumer confidence',b:'A key survey indicates growing doubt among shoppers over prospects for the UK economy in the next year.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c8957kqqdg4o?at_medium=RSS&at_campaign=rss',t:'6h ago',type:'builtin'},
-  {r:'eu',h:'Lloyds bank reveals IT glitch affected almost half a million customers',b:'In a letter to the Treasury Select Committee, Lloyds apologised and said some compensation had been paid.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c70dqk2vjv8o?at_medium=RSS&at_campaign=rss',t:'7h ago',type:'builtin'},
-  {r:'eu',h:'How the Hormuz closure could affect food, medicines and smartphones',b:'The price of a wide range of goods - from food, to smartphones, to medicines - could be affected by the US-Israel war with Iran.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c4gjxv5g19no?at_medium=RSS&at_campaign=rss',t:'17h ago',type:'builtin'},
-  {r:'usa',h:'Why one hedge fund veteran is urging investors to prepare for the worst',b:'DBis Andrew Beer suggests the markets crystal ball is broken.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/27/iran-to-economic-risks-markets-ability-to-forecast-world-in-question.html',t:'7h ago',type:'builtin'},
-  {r:'usa',h:'Private credits cracks open door for Wall Street banks comeback: The tug of war is just starting',b:'Wall Street banks may finally be getting a long-awaited opening to claw back market share from private credit lenders.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/27/wall-street-banks-private-credit-market-share-leveraged-loans.html',t:'12h ago',type:'builtin'},
-  {r:'usa',h:'Sen. Warren rips Federal Reserve chair pick Kevin Warsh: You have learned nothing from your failures',b:'Kevin Warshs nomination as chair of the Federal Reserve has been in limbo because of a criminal investigation of Chair Jerome Powell.',cat:'Central Bank',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/26/federal-reserve-kevin-walsh-elizabeth-warren-trump.html',t:'2h ago',type:'builtin'},
-  {r:'usa',h:'The research firm whose AI paper knocked the whole stock market is out with another big call',b:'Citrini Research said persistently high energy prices risk weighing on consumers and corporate earnings, creating a tough backdrop for equities.',cat:'Stocks',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/25/the-firm-whose-ai-paper-knocked-the-whole-market-is-out-with-another-big-call.html',t:'2d ago',type:'builtin'},
-  {r:'usa',h:'Former SEC Chair Jay Clayton says regulators would scrutinize trading ahead of Trump post',b:'Any move like that in advance of any announcement, the regulators are going to look at, said Clayton, former SEC chair.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/25/former-sec-chair-jay-clayton-says-regulators-would-scrutinize-trading-ahead-of-trump-post.html',t:'2d ago',type:'builtin'},
-  {r:'usa',h:'Stocks Sink in Broad AI Rout Sparked by Chinas DeepSeek',b:'U.S. stocks were mostly lower, with the Nasdaq leading declines as makers of AI infrastructure suffered steep falls, many in the double digits. Nvidia was down 16%.',cat:'Stocks',src:'WSJ Markets',url:'https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main',t:'423d ago',type:'builtin'}
+  {r:'ind',h:'Sensex Falls 1,505 Points to 73,768 on Friday — Nifty Below 22,820',b:'BSE Sensex fell 2.00% (-1,505 points) to 73,767.99 and Nifty 50 dropped 1.09% to 22,818 on Friday March 27. Bears took control as weak global cues, resurging crude prices and escalating Iran tensions triggered broad-based selling. All sectoral indices closed in the red.',cat:'Markets',src:'Goodreturns',url:'https://www.goodreturns.in',t:'Today',type:'builtin'},
+  {r:'ind',h:'Sensex +1,205 to 75,273 on Wednesday March 25 — Rally on Iran Ceasefire Hopes',b:'Sensex surged 1,205 points to 75,273 and Nifty advanced 394 points to 23,306 on Wednesday. All sectoral indices closed green, led by Titan, UltraTech, L&T and Bajaj Finance (all +4%), as US-Iran ceasefire proposal through Pakistani intermediaries eased oil fears.',cat:'Markets',src:'Trading Economics',url:'https://tradingeconomics.com',t:'2 days ago',type:'builtin'},
+  {r:'ind',h:'Indian Market Closed Thursday for Ram Navami — Global Cues Absorbed All at Once Friday',b:'BSE and NSE were closed on March 26 for the Ram Navami holiday. This meant two days of accumulated global sell signals hit on Friday. Nifty Midcap fell 2.2% and Nifty Smallcap dropped 1.7% as broader market mirrored the benchmark decline.',cat:'Markets',src:'Liquide',url:'https://blog.liquide.life',t:'Today',type:'builtin'},
+  {r:'ind',h:'FII Sell ₹1,805 Cr on March 25 — India VIX Near 20 as Geopolitical Uncertainty Lingers',b:'Foreign Institutional Investors net sold ₹1,805.37 crore on March 25. DII countered with ₹5,429.78 crore in buying. India VIX rose sharply above 19, reflecting elevated near-term volatility. Analysts warn of range-bound trading between 22,450 and 23,850.',cat:'Markets',src:'Trendlyne',url:'https://trendlyne.com',t:'Today',type:'builtin'},
+  {r:'ind',h:'Rupee at 94.74 — Near All-Time Low as Oil Prices Resurge Above $110',b:'The Indian rupee weakened to 94.74 per dollar on Friday as Brent crude topped $110 per barrel. India has lost roughly $11.37 billion in FII outflows in March alone. India VIX remains elevated and rupee at record lows signals sustained macro pressure.',cat:'Currency',src:'NSE India',url:'https://www.nseindia.com',t:'Today',type:'builtin'},
+  {r:'ind',h:'OFSS +5% on $100M Banking Deal — HEG Surges 14% on GrafTech Price Hike',b:'Oracle Financial Services Software jumped over 5% after signing a $100M perpetual software licensing deal with a US global banking client. HEG surged ~14% on GrafTech International’s price hike of $600–1,200/tonne — HEG holds 25–30% ex-China market share.',cat:'Stocks',src:'Trendlyne',url:'https://trendlyne.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Brent Tops $110 on Friday — Iran Turns Back Chinese Vessels from Strait of Hormuz',b:'Brent crude jumped above $110/bbl as Iranian forces turned back Chinese container vessels from the Strait of Hormuz. Trump extended the strike deadline to April 6 but the "war premium" remains embedded in prices. European shares fell broadly on Friday, led by a pullback in defense stocks.',cat:'Energy',src:'CNBC',url:'https://www.cnbc.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'European Markets Fall Friday — DAX -1.3%, FTSE -1.33% on Iran Escalation',b:'European equities fell sharply on Friday. DAX dropped 1.3%, FTSE 100 lost 1.33%, and Euro Stoxx 600 declined 1.1%. Defense stocks retreated 2–3% on ceasefire speculation after a strong run-up since the conflict began. Tech and luxury goods were bright spots earlier in the week.',cat:'Markets',src:'TheStreet',url:'https://www.thestreet.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Iran Receives 15-Point US Peace Proposal via Pakistan — Rejection Likely',b:'The Associated Press reported that Iran received a 15-point US ceasefire proposal delivered through Pakistani intermediaries. Iran’s state media signalled rejection of the plan. Despite this, the existence of formal negotiations briefly pulled Brent below $97 earlier in the week before it resurged above $110 on Friday.',cat:'Geopolitics',src:'AP / Motley Fool',url:'https://www.fool.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Fed Rate Hike Probability Crosses 50% — Stagflation Fears Intensify',b:'Traders in futures markets pushed the probability of a Fed rate hike by end of 2026 above 50% for the first time, as surging energy costs and sticky inflation collide with slowing growth. Philadelphia Fed President Paulson cited elevated inflation and uncertainty as key policy concerns.',cat:'Economy',src:'CNBC',url:'https://www.cnbc.com',t:'Today',type:'builtin'},
+  {r:'usa',h:'Dow Enters Correction — Falls 793 Points to 45,167 on Thursday March 26',b:'Dow Jones tumbled 793 points (-1.73%) to 45,167 on Thursday, entering correction territory (10% below ATH). S&P 500 dropped 1.67% to 6,368.85 (7-month low), Nasdaq fell 2.15% to 20,948 — its 5th straight weekly decline. S&P is down 6.8% in March, worst since December 2022.',cat:'Markets',src:'CNBC',url:'https://www.cnbc.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Nasdaq Now 13% Below October Peak — Russell 2000 in Correction All Week',b:'Nasdaq Composite has fallen into correction at -13% from its October record. Russell 2000 entered correction the prior week. S&P 500 is the only major index not yet in correction territory. Amazon -3.85%, Salesforce -3.41%, Visa -3.38% led Thursday’s Dow decline.',cat:'Markets',src:'Trading Economics',url:'https://tradingeconomics.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Nvidia -2.2%, Microsoft -2.5%, Meta -12% Since Wednesday on Layoffs & Court Ruling',b:'Tech heavyweights remain under pressure. Nvidia dropped 2.2%, Microsoft fell 2.5%, Alphabet shed 2.5%. Meta has dropped 12% since Wednesday after announcing layoffs and a court ruling that labelled its social media as addictive. Tesla, Amazon and Oracle each fell over 3% on risk-off sentiment.',cat:'Technology',src:'Trading Economics',url:'https://tradingeconomics.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Citi Cuts Equity to Neutral — "Most Negative Macro Risk Signals Triggering"',b:'Citigroup strategists cut equity allocation to neutral and reduced US small-cap overweight to zero, citing broad negative macro signals. "With most of our negative equity macro risk signals triggering, we continue to cut equity exposure," Citi wrote. Stagflation risk is the dominant theme.',cat:'Economy',src:'CNBC',url:'https://www.cnbc.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'iOS 27 to Let Siri Hand Off to Claude, Gemini — Apple +1% Pre-Market Friday',b:'Apple is opening up Siri in iOS 27 to outside AI assistants including Anthropic’s Claude, Google’s Gemini and others. Users will be able to route questions directly to third-party AI chatbots. Apple stock rose ~1% ahead of the market open on Friday, bucking broader weakness.',cat:'Technology',src:'Motley Fool',url:'https://www.fool.com',t:'Today',type:'builtin'},
+  {r:'usa',h:'Gold at $4,457 — Up 35% YTD and 1.09% Friday as Safe-Haven Demand Returns',b:'Gold climbed to $4,457/oz on Friday, up 1.09%. Gold is up 35% year-to-date and up from lows as safe-haven demand builds again despite earlier three-week slide. S&P 500 is down 5.8% YTD, Nasdaq -8.1%, while oil (+28%) and gold (+35%) are the only major asset classes in positive territory for 2026.',cat:'Commodities',src:'Yahoo Finance',url:'https://finance.yahoo.com',t:'Today',type:'builtin'}
 ];
 
 function colorMarketTables(){document.querySelectorAll('.mkt-tbl tr').forEach(function(tr){var c=tr.cells[2];if(!c)return;var t=c.textContent;tr.classList.remove('row-up','row-dn');if(t.indexOf('+')>=0)tr.classList.add('row-up');else if(t.indexOf('-')>=0)tr.classList.add('row-dn');});}
@@ -1198,10 +1202,28 @@ function render(){
   var nb=document.getElementById('newsBox');if(!nb)return;
   if(!l.length){nb.innerHTML='<div class="empty"><h2>No articles found</h2><p>Try clearing your search or filter.</p></div>';return;}
   nb.innerHTML='<div class="news-grid">'+l.map(makeCard).join('')+'</div>';
+  // Re-apply region filter class
+  if(REG&&REG!=='all'){nb.className='show-'+REG;}else{nb.className='';}
   setTimeout(colorMarketTables,100);
 }
 
-function switchTab(r,el){REG=r;CAT='All';Q='';var nb=document.getElementById('newsBox');if(nb)nb.setAttribute('data-region',r==='all'?'':r);closeInlinePanel();var si=document.getElementById('searchIn');if(si)si.value='';document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});var econBtn=document.getElementById('catEconomy');if(econBtn)econBtn.classList.add('active');document.querySelectorAll('.tab').forEach(function(b){b.className='tab '+b.id.replace('tab','').toLowerCase();});el.className='tab active '+r;render();}
+function switchTab(r,el){
+  REG=r;CAT='All';Q='';
+  updateBrkForRegion();
+  closeInlinePanel();
+  var si=document.getElementById('searchIn');if(si)si.value='';
+  // Reset category buttons
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
+  var econBtn=document.getElementById('catEconomy');if(econBtn)econBtn.classList.add('active');
+  // Update tab styles
+  document.querySelectorAll('.tab').forEach(function(b){b.className='tab '+b.id.replace('tab','').toLowerCase();});
+  el.className='tab active '+r;
+  // CSS-based filter on newsBox — simple and bulletproof
+  var nb=document.getElementById('newsBox');
+  if(nb){nb.className=r==='all'?'':'show-'+r;}
+  // Also update counts
+  render();
+}
 function setReg(r,el){REG=r;CAT='All';Q='';var si=document.getElementById('searchIn');if(si)si.value='';document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});var fc=document.querySelector('.cat-btn');if(fc)fc.classList.add('active');document.querySelectorAll('.r-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');render();}
 function setCat(c,el){CAT=c;closeInlinePanel();document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});el.classList.add('active');render();}
 function doSearch(){Q=document.getElementById('searchIn').value.trim();render();}
@@ -1225,25 +1247,55 @@ function loadAll(){var el=document.getElementById('countdown');if(el)el.textCont
 
 
 // ── BREAKING NEWS ROTATION (45s) ──
-var BREAKING_HEADLINES=[
-  'US-Israel war on Iran Day 17 · Brent crude $106/barrel · FOMC holds rates at 3.50–3.75% · Rupee hits new low ₹93.12/$ · S&P 500 down 4th week · RBI emergency forex intervention continues.',
-  'Gold hits all-time high $5,187/oz · Dollar index at 3-year peak · FII outflows from India ₹61,400 Cr in March · Iran blocks Hormuz strait tanker routes.',
-  'Sensex down 3,200 pts in 4 sessions · INDIA VIX spikes to 19.76 · HAL, BEL, Mazagon Dock hit 52-week highs · Defense ETF gains 11% this week.',
-  'ECB emergency meeting called · Germany approves €200B energy fund · Euro falls to $1.076 · European gas prices surge 34% on Iran supply fears.',
-  'Nasdaq enters correction at -11% · Tesla -5.2%, NVIDIA -3.4% · Lockheed Martin +12%, Northrop +9% · US Consumer Confidence crashes to 49.3.',
-  'RBI deploys $8B in single session to defend rupee · India fuel prices raised ₹2/litre · Inflation risk rises as oil hits $106 · MPC meeting April 9.',
-  'Bitcoin falls to $68,430 on risk-off wave · Ethereum down 4.9% · Crypto market cap loses $180B · Gold outperforms all assets in March 2026.',
-  'Strait of Hormuz: Iran mines 3 tankers, US 5th Fleet on high alert · LNG spot prices hit 18-month highs · India emergency LNG procurement underway.'
-];
+var BREAKING_HEADLINES={
+  all:[
+    'US-Iran war Day 26 · Brent crude tops $110/barrel · Dow enters correction -10% from ATH · Rupee hits all-time low ₹94.74/$ · Sensex -2% Friday · FII outflows $11.37B in March.',
+    'Gold $4,457/oz (+35% YTD) · Bitcoin $67,720 · VIX 27.44 · S&P 500 -1.67% Thursday · Nasdaq correction -13% from Oct peak · Strait of Hormuz remains partially closed.',
+    'Trump extends Iran strike deadline to April 6 · Iran turns back Chinese vessels from Strait · 10,000 US troops possibly deploying to Middle East · Peace talks via Pakistan ongoing.',
+    'Fed rate hike probability crosses 50% for first time in 2026 · Stagflation fears intensify · ECB holds at 2.25% · RBI repo rate 5.25% · Global recession risk rising.'
+  ],
+  ind:[
+    'Sensex -1,505 pts to 73,768 on Friday · Nifty below 22,820 · All sectors in red · BSE market cap drops ₹8.97 lakh crore · India VIX elevated near 20.',
+    'Rupee at ₹94.74/$ — all-time low · RBI intervenes in forex market · FII outflows ₹1,805 Cr on March 25 · India HSBC PMI falls to 56.5 from 58.9.',
+    'Markets closed Thursday for Ram Navami · Sensex +1,205 to 75,273 on Wednesday · Nifty +394 to 23,306 · Titan, UltraTech, L&T all +4% on ceasefire hopes.',
+    'OFSS +5% on $100M banking deal · HEG +14% on GrafTech price hike · Coal India: 8 new coking coal washeries · Maruti investing ₹10,189 Cr in Gujarat plant.'
+  ],
+  eu:[
+    'Brent crude tops $110/barrel on Friday · Iran turns back Chinese container vessels from Hormuz · Trump extends strike deadline to April 6 · European markets fall.',
+    'DAX -1.3%, FTSE -1.33%, Euro Stoxx -1.1% Friday · Defense stocks -2–3% on ceasefire speculation · ECB rate at 2.25% · Germany energy fund €200B approved.',
+    'Euro Stoxx 600 +1.1% Wednesday on Iran ceasefire hopes · DAX +1.3%, FTSE +0.8% · European defense stocks had run-up 22% since Iran war began March 1.',
+    'Copper rebounds 3% as recession fears ease · Palladium +1% · European gas prices +34% on Iran supply fears · LNG spot prices at 18-month highs.'
+  ],
+  usa:[
+    'Dow -793 pts enters correction (-10% from ATH) Thursday · S&P 500 -1.67% to 6,368 (7-month low) · Nasdaq -2.15% to 20,948 — 5th straight losing week.',
+    'Nasdaq correction -13% from Oct peak · Amazon -3.85%, Salesforce -3.41%, Visa -3.38% Thursday · Meta -12% since Wed on layoffs & court ruling · VIX 27.44.',
+    'Fed rate hike odds hit 52% — first time above 50% · Citi cuts equity to neutral · "Most negative macro risk signals triggering" · Stagflation concerns dominate.',
+    'iOS 27 to open Siri to Claude, Gemini, others · Apple +1% pre-market Friday · TSA funding restored · Russell 2000 in correction all week · S&P 500 -6.8% in March.'
+  ]
+};
 var brkIdx=0;
+function getBrkArr(){var r=typeof REG!=='undefined'?REG:'all';return BREAKING_HEADLINES[r]||BREAKING_HEADLINES.all;}
 function rotateBrk(){
-  brkIdx=(brkIdx+1)%BREAKING_HEADLINES.length;
+  var arr=getBrkArr();
+  brkIdx=(brkIdx+1)%arr.length;
   var el=document.getElementById('breakingTxt');
   var bar=document.getElementById('breakingBar');
   if(!el||!bar)return;
   bar.style.opacity='0';bar.style.transform='translateY(-4px)';bar.style.transition='opacity .4s,transform .4s';
   setTimeout(function(){
-    el.textContent=BREAKING_HEADLINES[brkIdx];
+    el.textContent=arr[brkIdx];
+    bar.style.opacity='1';bar.style.transform='translateY(0)';
+  },420);
+}
+function updateBrkForRegion(){
+  brkIdx=0;
+  var arr=getBrkArr();
+  var el=document.getElementById('breakingTxt');
+  var bar=document.getElementById('breakingBar');
+  if(!el||!bar)return;
+  bar.style.opacity='0';bar.style.transform='translateY(-4px)';bar.style.transition='opacity .4s,transform .4s';
+  setTimeout(function(){
+    el.textContent=arr[0];
     bar.style.opacity='1';bar.style.transform='translateY(0)';
   },420);
 }
@@ -1710,7 +1762,7 @@ setTimeout(colorMarketTables,500);
 <script>
 if('serviceWorker' in navigator){
   var SW_CODE=[
-    "const CACHE='rudoeu-v3';",
+    "const CACHE='rudoeu-v1';",
     "const STATIC=['/','index.html'];",
     "self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(STATIC))));",
     "self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));",
