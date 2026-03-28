@@ -843,7 +843,8 @@ setInterval(getMarketStatus,60000);
 
     <!-- Calculator -->
     <div style="font-size:13px;font-weight:700;margin-bottom:12px;">🧮 Post Office Calculator</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;">
+    <!-- Row 1: inputs + result side by side -->
+    <div style="display:grid;grid-template-columns:240px 1fr;gap:14px;margin-bottom:14px;">
       <div>
         <span class="lbl">Select Scheme</span>
         <select class="tool-select" id="po-scheme" onchange="poSchemeChange()">
@@ -851,7 +852,6 @@ setInterval(getMarketStatus,60000);
           <option value="scss">👴 SCSS — 8.2% p.a. (5 yr)</option>
           <option value="pomis">📅 Post Office MIS — 7.4% p.a. (5 yr)</option>
         </select>
-
         <!-- PPF inputs -->
         <div id="po-ppf-inputs">
           <span class="lbl">Annual Deposit (₹)</span>
@@ -860,14 +860,12 @@ setInterval(getMarketStatus,60000);
           <input class="tool-inp" id="ppf-years" type="number" value="15" min="1" max="15">
           <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Max ₹1.5 lakh/yr · EEE tax-exempt · Compounded yearly</div>
         </div>
-
         <!-- SCSS inputs -->
         <div id="po-scss-inputs" style="display:none;">
           <span class="lbl">Lump Sum Deposit (₹)</span>
           <input class="tool-inp" id="scss-principal" type="number" value="500000" min="1000" max="3000000">
-          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Max ₹30 lakh per account · Age 60+ · 5-year tenure · Interest paid quarterly</div>
+          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Max ₹30 lakh · Age 60+ · 5-year tenure · Quarterly interest</div>
         </div>
-
         <!-- POMIS inputs -->
         <div id="po-pomis-inputs" style="display:none;">
           <span class="lbl">Lump Sum Deposit (₹)</span>
@@ -877,23 +875,24 @@ setInterval(getMarketStatus,60000);
             <option value="single">Single (max ₹9 lakh)</option>
             <option value="joint">Joint (max ₹15 lakh)</option>
           </select>
-          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Monthly income scheme · 5-year tenure · Interest paid monthly</div>
+          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Monthly income · 5-year tenure · Interest paid monthly</div>
         </div>
-
         <button class="tool-btn" style="background:var(--IN);" onclick="calcPO()">Calculate</button>
       </div>
-      <div id="po-result" style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+      <!-- Result — takes remaining width -->
+      <div id="po-result" style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:20px;display:flex;align-items:center;justify-content:center;min-height:160px;">
         <div style="text-align:center;color:var(--t3);font-size:11px;">Select a scheme and click Calculate</div>
       </div>
-      <div style="background:var(--INd);border:1px solid var(--INb);border-radius:9px;padding:14px;">
-        <div style="font-size:11px;font-weight:700;color:var(--IN);margin-bottom:10px;">💡 Scheme Highlights</div>
-        <div id="po-tips" style="font-size:11px;color:var(--t2);line-height:1.9;">
-          <div>• EEE: Invest, earn &amp; withdraw — all tax-free</div>
-          <div>• Section 80C deduction up to ₹1.5L/yr</div>
-          <div>• Partial withdrawal after 7 years</div>
-          <div>• Loan facility after 3 years</div>
-          <div>• Backed by Govt. of India — zero risk</div>
-        </div>
+    </div>
+    <!-- Row 2: Scheme Highlights full width at bottom -->
+    <div style="background:var(--INd);border:1px solid var(--INb);border-radius:9px;padding:12px 16px;">
+      <div style="font-size:11px;font-weight:700;color:var(--IN);margin-bottom:8px;">💡 Scheme Highlights</div>
+      <div id="po-tips" style="display:flex;flex-wrap:wrap;gap:6px 24px;font-size:11px;color:var(--t2);line-height:1.8;">
+        <div>• EEE: Invest, earn &amp; withdraw — all tax-free</div>
+        <div>• Section 80C deduction up to ₹1.5L/yr</div>
+        <div>• Partial withdrawal after 7 years</div>
+        <div>• Loan facility after 3 years</div>
+        <div>• Backed by Govt. of India — zero risk</div>
       </div>
     </div>
   </div>
