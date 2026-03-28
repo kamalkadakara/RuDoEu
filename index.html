@@ -1,9 +1,29 @@
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="RuDoEu — Financial Dashboard covering India, Europe and USA markets.">
-<title>RuDoEu — Financial Dashboard</title>
+<meta name="description" content="Free NRI financial dashboard covering India, Europe & USA markets. NRE NRO FCNR accounts, remittance calculator, FD rates, income tax calculator, LIC policies, PPF, SCSS, mutual funds and more.">
+<title>RuDoEu — NRI Financial Dashboard | NRE NRO Accounts, FD Rates, Remittance, Tax India</title>
   <link rel="manifest" href="/manifest.json">
+  <meta name="keywords" content="NRI financial dashboard, NRE NRO FCNR account, NRI remittance calculator, FD rates India 2026, income tax calculator India, LIC policy, PPF calculator, SCSS calculator, NRI Germany, NRI corner, mutual fund calculator, EMI calculator India, post office schemes, DTAA India Germany, NRI tax TDS, RuDoEu">
+  <meta name="author" content="RuDoEu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <link rel="canonical" href="https://rudoeu.com/">
+  <!-- Open Graph / WhatsApp / LinkedIn / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rudoeu.com/">
+  <meta property="og:title" content="RuDoEu — NRI Financial Dashboard | India, Europe & USA Markets">
+  <meta property="og:description" content="Free NRI financial dashboard. NRE/NRO accounts, remittance calculator, FD rates, income tax, LIC, PPF, SCSS, mutual funds. Built for NRIs in Germany, UAE & beyond.">
+  <meta property="og:image" content="https://rudoeu.com/og-image.png">
+  <meta property="og:site_name" content="RuDoEu">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rudoeu.com/">
+  <meta name="twitter:title" content="RuDoEu — NRI Financial Dashboard">
+  <meta name="twitter:description" content="Free NRI financial dashboard covering India, Europe & USA markets. NRE NRO accounts, remittance, FD rates, tax calculator and more.">
+  <meta name="twitter:image" content="https://rudoeu.com/og-image.png">
+  <!-- Google Search Console — replace YOUR_VERIFICATION_CODE after verifying at search.google.com/search-console -->
+  <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
   <meta name="theme-color" content="#0f172a">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -167,7 +187,17 @@ a{color:var(--AC);text-decoration:none;}
 .back-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--DO);cursor:pointer;margin-bottom:16px;background:none;border:none;font-family:var(--fo);font-weight:600;}
 .inline-panel{margin-top:14px;background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;box-shadow:var(--sh2);}
 ::-webkit-scrollbar{width:4px;height:4px;}.scrollbar-thumb{background:var(--b2);border-radius:2px;}
-.wl-row:hover{background:var(--s2)!important;}
+.nri-tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid var(--b1);background:var(--s2);}
+.ntab{padding:9px 14px;border:none;border-bottom:3px solid transparent;font-size:11px;font-weight:600;color:var(--t2);cursor:pointer;font-family:var(--fo);white-space:nowrap;background:transparent;transition:all .15s;margin-bottom:-2px;}
+.ntab:hover{color:var(--tx);background:var(--s1);}.ntab.active{color:#0ea5e9;border-bottom-color:#0ea5e9;background:var(--s1);}
+.nri-panel{padding:16px;display:none;}.nri-panel.active{display:block;}
+.nri-table{width:100%;border-collapse:collapse;font-size:11px;}
+.nri-table th{padding:8px 12px;font-size:9px;color:var(--t3);font-weight:700;letter-spacing:1px;text-align:left;border-bottom:2px solid var(--b1);background:var(--s2);text-transform:uppercase;}
+.nri-table td{padding:9px 12px;border-bottom:1px solid var(--b1);vertical-align:top;line-height:1.5;}
+.nri-table tr:last-child td{border-bottom:none;}.nri-table tr:hover td{background:var(--s2);}
+.nri-badge{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;white-space:nowrap;}
+.nri-section-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0ea5e9;margin-bottom:10px;margin-top:16px;padding-bottom:4px;border-bottom:1px solid var(--b1);}
+.nri-section-head:first-child{margin-top:0;}
 .bm-btn{transition:color .2s;}
 .bm-btn:hover{color:var(--RU)!important;}
 .tab-cnt{font-size:9px;font-family:var(--fm);background:var(--s3);border-radius:10px;padding:1px 5px;font-weight:700;color:var(--t3);margin-left:3px;}
@@ -456,6 +486,18 @@ getMarketStatus();
 setInterval(getMarketStatus,60000);
 </script>
   </div>
+
+  <!-- QUICK-JUMP NAV -->
+  <div style="margin-bottom:10px;padding:6px 10px;background:var(--hdr);border-radius:8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;border:1px solid rgba(245,166,35,.15);">
+    <span style="font-size:9px;font-weight:700;color:#64748b;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;margin-right:4px;">⚡ JUMP TO</span>
+    <span onclick="document.getElementById('newsBox').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#94a3b8;background:#1e293b;border:1px solid #334155;border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='#475569'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='#334155'">📰 News</span>
+    <span onclick="document.querySelector('.hub-section').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#F5A623;background:rgba(245,166,35,.1);border:1px solid rgba(245,166,35,.25);border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(245,166,35,.2)'" onmouseout="this.style.background='rgba(245,166,35,.1)'">🏦 Banking Hub</span>
+    <span onclick="document.querySelector('.hub-section:last-of-type').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#2ABFBF;background:rgba(42,191,191,.1);border:1px solid rgba(42,191,191,.25);border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.background='rgba(42,191,191,.2)'" onmouseout="this.style.background='rgba(42,191,191,.1)'">🌏 NRI Corner</span>
+    <span onclick="document.getElementById('hub-fd').parentElement.querySelector('#hub-fd').parentElement.scrollIntoView&&switchHub('po',document.querySelector('[onclick*=\\'po\\']'));document.querySelector('.hub-section').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#94a3b8;background:#1e293b;border:1px solid #334155;border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='#475569'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='#334155'" onclick="switchHub('po',document.querySelectorAll('.htab')[7]);document.querySelector('.hub-section').scrollIntoView({behavior:'smooth',block:'start'})">📮 PO Schemes</span>
+    <span onclick="switchHub('emi',document.querySelectorAll('.htab')[8]);document.querySelector('.hub-section').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#94a3b8;background:#1e293b;border:1px solid #334155;border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='#475569'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='#334155'">🏠 EMI Calc</span>
+    <span onclick="switchHub('tax',document.querySelectorAll('.htab')[9]);document.querySelector('.hub-section').scrollIntoView({behavior:'smooth',block:'start'})" style="font-size:10px;font-weight:600;color:#94a3b8;background:#1e293b;border:1px solid #334155;border-radius:4px;padding:3px 9px;cursor:pointer;transition:all .15s;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='#475569'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='#334155'">💰 Tax Calc</span>
+  </div>
+
   <div style="margin-bottom:10px;padding:8px 14px;background:var(--s2);border:1px solid var(--b1);border-radius:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
     <span style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;">🔍 Trending:</span>
     <div style="display:flex;flex-wrap:wrap;gap:6px;">
@@ -485,17 +527,10 @@ setInterval(getMarketStatus,60000);
 
   <!-- CATEGORY BUTTONS — Stocks/Crypto/GDP open inline panels -->
   <div class="cats">
-    <button class="cat-btn active" id="catEconomy" onclick="setCat('All',this)">🏛️ Economy</button>
-    <button class="cat-btn" onclick="setCat('Central Bank',this)">🏦 Central Banks</button>
-    <button class="cat-btn" onclick="setCat('Stocks',this)">📊 Stocks</button>
-    <button class="cat-btn" onclick="setCat('Energy',this)">⚡ Energy</button>
-    <button class="cat-btn" onclick="setCat('Currency',this)">💱 Currency</button>
-    <button class="cat-btn" onclick="setCat('War',this)">🛢️ War &amp; Oil</button>
-    <button class="cat-btn" onclick="setCat('IPO',this)">🚀 IPO</button>
-    <button class="cat-btn" id="btnStocks" onclick="openInlineStocks(this)" style="background:#1e1b4b;color:#a5b4fc;border-color:#3730a3;font-weight:700;">📈 Top 50 Stocks</button>
-    <button class="cat-btn" id="btnCrypto" onclick="openInlineCrypto(this)" style="background:#1a0a00;color:#fbbf24;border-color:#92400e;font-weight:700;">₿ Top 50 Crypto</button>
     <button class="cat-btn" id="btnGDP" onclick="openInlineGDP(this)" style="background:#052e16;color:#4ade80;border-color:#166534;font-weight:700;">🌍 Top 10 GDP</button>
-    <button class="cat-btn" id="btnHeatmap" onclick="openInlineHeatmap(this)" style="background:#1a0828;color:#e879f9;border-color:#7e22ce;font-weight:700;">🗺️ Heatmap</button>
+    <button class="cat-btn" id="btnCrypto" onclick="openInlineCrypto(this)" style="background:#1a0a00;color:#fbbf24;border-color:#92400e;font-weight:700;">₿ Top 50 Crypto</button>
+    <button class="cat-btn" id="btnStocks" onclick="openInlineStocks(this)" style="background:#1e1b4b;color:#a5b4fc;border-color:#3730a3;font-weight:700;">📈 Top 50 Stocks</button>
+    <button class="cat-btn" id="btnHeatmap" onclick="openInlineHeatmap(this)" style="background:#1a0828;color:#e879f9;border-color:#7e22ce;font-weight:700;">🗺️ Market Map</button>
   </div>
 
   <div id="newsBox"><div class="news-grid"><a class="n-card ind" href="https://economictimes.indiatimes.com/markets/" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">Markets</span><span class="n-time">2h ago</span></div><div class="n-head">Sensex Plunges to 73,847 — Down 3,200 Points in 4 Sessions</div><div class="n-body">BSE Sensex fell 1.86% to 73,847. FII outflows hit ₹61,400 crore in March.</div><div class="n-foot"><span class="n-src">Economic Times</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://economictimes.indiatimes.com/markets/" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card ind" href="https://www.reuters.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">Currency</span><span class="n-time">3h ago</span></div><div class="n-head">Rupee Hits New Record Low ₹93.12/$ — RBI Spends $8B in Single Day</div><div class="n-body">The rupee touched ₹93.12 against the dollar. RBI spent an estimated $8B in a single session.</div><div class="n-foot"><span class="n-src">Reuters</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.reuters.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card ind" href="https://www.moneycontrol.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">Currency</span><span class="n-time">4h ago</span></div><div class="n-head">Dollar Surges, Rupee Weakens — NRE FD Rates Now More Attractive</div><div class="n-body">With rupee at all-time lows, NRE Fixed Deposits are yielding effective returns of 8-9% in dollar terms.</div><div class="n-foot"><span class="n-src">Moneycontrol</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.moneycontrol.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card ind" href="https://www.moneycontrol.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">Stocks</span><span class="n-time">3h ago</span></div><div class="n-head">India Defense Stocks Surge: BEL +9%, HAL +7%, Mazagon Dock +8%</div><div class="n-body">Defense stocks bucked the market trend. BEL jumped 9%, HAL rose 7%, Mazagon Dock surged 8%.</div><div class="n-foot"><span class="n-src">Moneycontrol</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.moneycontrol.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card ind" href="https://www.moneycontrol.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">Energy</span><span class="n-time">5h ago</span></div><div class="n-head">India Diesel and Petrol Prices Jump ₹2/Litre — First Hike in 2 Years</div><div class="n-body">Government raised fuel prices by ₹2/litre as OMCs reported record under-recoveries.</div><div class="n-foot"><span class="n-src">Moneycontrol</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.moneycontrol.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card ind" href="https://economictimes.indiatimes.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇮🇳</span><div class="n-meta"><span class="n-reg ind"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇮🇳 IND</span><span class="n-cat">IPO</span><span class="n-time">7h ago</span></div><div class="n-head">GSP Crop Science IPO Subscribed 2.4x on Day 1</div><div class="n-body">GSP Crop Science IPO received 2.4x subscription on day 1, led by retail investors.</div><div class="n-foot"><span class="n-src">Economic Times</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://economictimes.indiatimes.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card eu" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇪🇺</span><div class="n-meta"><span class="n-reg eu"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇪🇺 EU</span><span class="n-cat">Central Bank</span><span class="n-time">1h ago</span></div><div class="n-head">FOMC Holds at 3.50-3.75% — Powell Flags Stagflation Risk</div><div class="n-body">Fed unanimously held rates. Powell mentioned stagflation as a non-trivial risk.</div><div class="n-foot"><span class="n-src">CNBC</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card eu" href="https://www.ft.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇪🇺</span><div class="n-meta"><span class="n-reg eu"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇪🇺 EU</span><span class="n-cat">Currency</span><span class="n-time">4h ago</span></div><div class="n-head">Euro Weakens to $1.076 — ECB Faces Stagflation Dilemma</div><div class="n-body">The euro slipped to $1.076. ECB faces the choice between fighting inflation and supporting the eurozone.</div><div class="n-foot"><span class="n-src">FT</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.ft.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card eu" href="https://www.reuters.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇪🇺</span><div class="n-meta"><span class="n-reg eu"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇪🇺 EU</span><span class="n-cat">Energy</span><span class="n-time">2h ago</span></div><div class="n-head">Brent Crude Hits $106 — Iran Mines Two More Tankers</div><div class="n-body">Brent crude surged 2.8% to $106/barrel after Iran mined additional tankers near Strait of Hormuz.</div><div class="n-foot"><span class="n-src">Reuters</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.reuters.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card eu" href="https://www.reuters.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇪🇺</span><div class="n-meta"><span class="n-reg eu"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇪🇺 EU</span><span class="n-cat">Economy</span><span class="n-time">4h ago</span></div><div class="n-head">Germany Approves €200B Emergency Energy Fund — DAX +1.2%</div><div class="n-body">Bundestag approved a €200B emergency energy fund, the largest since the 2022 gas crisis.</div><div class="n-foot"><span class="n-src">Reuters</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.reuters.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card eu" href="https://www.ft.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇪🇺</span><div class="n-meta"><span class="n-reg eu"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇪🇺 EU</span><span class="n-cat">Stocks</span><span class="n-time">5h ago</span></div><div class="n-head">Rheinmetall, BAE Systems, Leonardo All Hit 52-Week Highs</div><div class="n-body">European defense giants all reached 52-week highs as the Iran conflict entered its 17th day.</div><div class="n-foot"><span class="n-src">Financial Times</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.ft.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Markets</span><span class="n-time">1h ago</span></div><div class="n-head">S&amp;P 500 Enters Correction at -11% — 4th Straight Weekly Loss</div><div class="n-body">The S&amp;P 500 is down 11% from its February peak, posting 4 consecutive weeks of losses.</div><div class="n-foot"><span class="n-src">CNBC</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.reuters.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Currency</span><span class="n-time">2h ago</span></div><div class="n-head">Dollar Index Hits 3-Year High — Safe Haven Demand Surges</div><div class="n-body">The US dollar index jumped to a 3-year high as investors fled to safety.</div><div class="n-foot"><span class="n-src">Reuters</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.reuters.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Energy</span><span class="n-time">3h ago</span></div><div class="n-head">US Retail Gasoline Hits $3.89/gallon — Up 33% Since Iran War Began</div><div class="n-body">Average US gasoline prices spiked 33% from $2.94 pre-war just 17 days ago.</div><div class="n-foot"><span class="n-src">AAA</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Stocks</span><span class="n-time">4h ago</span></div><div class="n-head">Lockheed Martin +12%, Northrop +9% — Defense ETF All-Time High</div><div class="n-body">US defense stocks surged to records. Lockheed Martin jumped 12%, Northrop Grumman gained 9%.</div><div class="n-foot"><span class="n-src">CNBC</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Economy</span><span class="n-time">5h ago</span></div><div class="n-head">US Consumer Confidence Crashes to 49.3 — Lowest Since May 2020</div><div class="n-body">Conference Board Consumer Confidence Index plunged to 49.3 in March.</div><div class="n-foot"><span class="n-src">Conference Board</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a><a class="n-card usa" href="https://www.cnbc.com" target="_blank" rel="noopener"><span style="position:absolute;top:8px;right:40px;font-size:28px;opacity:0.07;pointer-events:none;line-height:1;">🇺🇸</span><div class="n-meta"><span class="n-reg usa"><span class="live-dot-g" style="width:5px;height:5px;margin-right:3px;display:inline-block;"></span>🇺🇸 USA</span><span class="n-cat">Currency</span><span class="n-time">2h ago</span></div><div class="n-head">Gold Hits All-Time High $5,187/oz — War and Stagflation Drive Safe Haven</div><div class="n-body">Gold reached a new all-time high as stagflation fears combined with Iran war sent investors to safety.</div><div class="n-foot"><span class="n-src">CNBC</span><div style="display:flex;align-items:center;gap:10px;"><span onclick="event.preventDefault();toggleBookmark(this,a)" class="bm-btn" data-url="https://www.cnbc.com" title="Save" style="font-size:14px;cursor:pointer;color:var(--t3);line-height:1;">🏷️</span><span onclick="event.preventDefault();shareArticle(a)" title="Share" style="font-size:13px;cursor:pointer;color:var(--t3);">↗️</span><span class="n-read">Read →</span></div></div></a></div></div>
@@ -555,7 +590,7 @@ setInterval(getMarketStatus,60000);
     <!-- HEATMAP -->
     <div id="panelHeatmap" style="display:none;">
       <div style="padding:10px 16px;border-bottom:1px solid #7e22ce;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;background:linear-gradient(90deg,#1a0828,#2d0f52);">
-        <div style="font-size:13px;font-weight:800;color:#e879f9;">🗺️ Market Heatmap</div>
+        <div style="font-size:13px;font-weight:800;color:#e879f9;">🗺️ Market Map</div>
         <div style="display:flex;gap:6px;">
           <button id="hm_ind" onclick="renderHeatmap('ind',this)" style="padding:3px 10px;border-radius:6px;border:1px solid var(--INb);background:var(--INd);color:var(--IN);font-size:10px;font-weight:700;cursor:pointer;font-family:var(--fo);">🇮🇳 India</button>
           <button id="hm_eu" onclick="renderHeatmap('eu',this)" style="padding:3px 10px;border-radius:6px;border:1px solid var(--b1);background:#1e293b;color:#94a3b8;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--fo);">🇪🇺 Europe</button>
@@ -577,9 +612,10 @@ setInterval(getMarketStatus,60000);
     </div>
   </div>
   <!-- END INLINE PANELS -->
+
   <!-- BANKING HUB -->
   <div class="hub-section" style="margin-top:18px;margin-bottom:24px;">
-    <div class="hub-head"><div class="hub-title">🏦 Banking &amp; Investment Hub</div><div class="hub-sub">FD · RD · Mutual Funds · PSB · Private Banks · NBFC · Calendar</div></div>
+    <div class="hub-head"><div class="hub-title">🏦 Banking &amp; Investment Hub</div><div class="hub-sub">🇮🇳</div></div>
     <div class="hub-tabs">
       <button class="htab active" onclick="switchHub('fd',this)">📊 FD Calculator</button>
       <button class="htab" onclick="switchHub('rd',this)">📈 RD Calculator</button>
@@ -587,7 +623,11 @@ setInterval(getMarketStatus,60000);
       <button class="htab" onclick="switchHub('pvt',this)">🏦 Private Banks</button>
       <button class="htab" onclick="switchHub('nbfc',this)">🏢 NBFC</button>
       <button class="htab" onclick="switchHub('mf',this)">💰 Top 10 MF</button>
+      <button class="htab" onclick="switchHub('lic',this)">🏛️ LIC Policies</button>
       <button class="htab" onclick="switchHub('cal',this)">🗓️ Calendar</button>
+      <button class="htab" onclick="switchHub('po',this)">📮 PO Schemes</button>
+      <button class="htab" onclick="switchHub('emi',this)">🏠 EMI Calc</button>
+      <button class="htab" onclick="switchHub('tax',this)">💰 Tax Calc</button>
     </div>
     <div id="hub-fd" class="hub-panel active">
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;">
@@ -641,20 +681,93 @@ setInterval(getMarketStatus,60000);
         </div>
       </div>
     </div>
-    <div id="hub-mf" class="hub-panel" style="overflow-x:auto;padding:0;">
+    <div id="hub-mf" class="hub-panel" style="padding:0;">
       <div style="padding:8px 14px;background:var(--s2);font-size:10px;color:var(--t3);">Top performing mutual funds India · Mar 18, 2026 · Not financial advice</div>
-      <table class="fd-table"><thead><tr><th>#</th><th>Fund Name</th><th>Category</th><th>1Y Return</th><th>3Y CAGR</th><th>5Y CAGR</th><th>AUM</th></tr></thead><tbody>
-        <tr><td>1</td><td style="font-weight:700;">Quant Small Cap Fund</td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 6px;border-radius:20px;">Small Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">26.4%</td><td style="font-family:var(--fm);">29.2%</td><td style="font-family:var(--fm);">34.8%</td><td style="font-family:var(--fm);">₹22,450 Cr</td></tr>
-        <tr><td>2</td><td style="font-weight:700;">Nippon India Small Cap</td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 6px;border-radius:20px;">Small Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">22.1%</td><td style="font-family:var(--fm);">26.7%</td><td style="font-family:var(--fm);">31.2%</td><td style="font-family:var(--fm);">₹54,230 Cr</td></tr>
-        <tr><td>3</td><td style="font-weight:700;">HDFC Mid-Cap Opportunities</td><td><span style="background:#fff7ed;color:#c2410c;font-size:9px;padding:2px 6px;border-radius:20px;">Mid Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">20.7%</td><td style="font-family:var(--fm);">23.4%</td><td style="font-family:var(--fm);">27.1%</td><td style="font-family:var(--fm);">₹68,900 Cr</td></tr>
-        <tr><td>4</td><td style="font-weight:700;">Parag Parikh Flexi Cap</td><td><span style="background:var(--EUd);color:var(--EU);font-size:9px;padding:2px 6px;border-radius:20px;">Flexi Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">19.3%</td><td style="font-family:var(--fm);">21.8%</td><td style="font-family:var(--fm);">25.4%</td><td style="font-family:var(--fm);">₹72,340 Cr</td></tr>
-        <tr><td>5</td><td style="font-weight:700;">Mirae Asset Large Cap</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:20px;">Large Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">16.6%</td><td style="font-family:var(--fm);">17.4%</td><td style="font-family:var(--fm);">20.1%</td><td style="font-family:var(--fm);">₹38,760 Cr</td></tr>
-        <tr><td>6</td><td style="font-weight:700;">Axis ELSS Tax Saver</td><td><span style="background:#dcfce7;color:#15803d;font-size:9px;padding:2px 6px;border-radius:20px;">ELSS</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">15.2%</td><td style="font-family:var(--fm);">16.6%</td><td style="font-family:var(--fm);">19.7%</td><td style="font-family:var(--fm);">₹32,450 Cr</td></tr>
-        <tr><td>7</td><td style="font-weight:700;">ICICI Pru Balanced Advantage</td><td><span style="background:var(--EUd);color:var(--EU);font-size:9px;padding:2px 6px;border-radius:20px;">Hybrid</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">12.3%</td><td style="font-family:var(--fm);">13.8%</td><td style="font-family:var(--fm);">15.2%</td><td style="font-family:var(--fm);">₹54,670 Cr</td></tr>
-        <tr><td>8</td><td style="font-weight:700;">Nippon Gold ETF FOF</td><td><span style="background:#fef3c7;color:#d97706;font-size:9px;padding:2px 6px;border-radius:20px;">Gold</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">21.8%</td><td style="font-family:var(--fm);">20.3%</td><td style="font-family:var(--fm);">18.7%</td><td style="font-family:var(--fm);">₹8,760 Cr</td></tr>
-        <tr><td>9</td><td style="font-weight:700;">SBI Bluechip Fund</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:20px;">Large Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">14.8%</td><td style="font-family:var(--fm);">15.9%</td><td style="font-family:var(--fm);">18.3%</td><td style="font-family:var(--fm);">₹44,120 Cr</td></tr>
-        <tr><td>10</td><td style="font-weight:700;">HDFC Short Term Debt</td><td><span style="background:var(--s2);color:var(--t2);font-size:9px;padding:2px 6px;border-radius:20px;">Debt</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.9%</td><td style="font-family:var(--fm);">7.2%</td><td style="font-family:var(--fm);">7.6%</td><td style="font-family:var(--fm);">₹14,280 Cr</td></tr>
-      </tbody></table>
+      <div style="overflow-x:auto;">
+        <table class="fd-table"><thead><tr><th>#</th><th>Fund Name</th><th>Category</th><th>1Y Return</th><th>3Y CAGR</th><th>5Y CAGR</th><th>AUM</th></tr></thead><tbody>
+          <tr><td>1</td><td style="font-weight:700;">Quant Small Cap Fund</td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 6px;border-radius:20px;">Small Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">26.4%</td><td style="font-family:var(--fm);">29.2%</td><td style="font-family:var(--fm);">34.8%</td><td style="font-family:var(--fm);">₹22,450 Cr</td></tr>
+          <tr><td>2</td><td style="font-weight:700;">Nippon India Small Cap</td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 6px;border-radius:20px;">Small Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">22.1%</td><td style="font-family:var(--fm);">26.7%</td><td style="font-family:var(--fm);">31.2%</td><td style="font-family:var(--fm);">₹54,230 Cr</td></tr>
+          <tr><td>3</td><td style="font-weight:700;">HDFC Mid-Cap Opportunities</td><td><span style="background:#fff7ed;color:#c2410c;font-size:9px;padding:2px 6px;border-radius:20px;">Mid Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">20.7%</td><td style="font-family:var(--fm);">23.4%</td><td style="font-family:var(--fm);">27.1%</td><td style="font-family:var(--fm);">₹68,900 Cr</td></tr>
+          <tr><td>4</td><td style="font-weight:700;">Parag Parikh Flexi Cap</td><td><span style="background:var(--EUd);color:var(--EU);font-size:9px;padding:2px 6px;border-radius:20px;">Flexi Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">19.3%</td><td style="font-family:var(--fm);">21.8%</td><td style="font-family:var(--fm);">25.4%</td><td style="font-family:var(--fm);">₹72,340 Cr</td></tr>
+          <tr><td>5</td><td style="font-weight:700;">Mirae Asset Large Cap</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:20px;">Large Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">16.6%</td><td style="font-family:var(--fm);">17.4%</td><td style="font-family:var(--fm);">20.1%</td><td style="font-family:var(--fm);">₹38,760 Cr</td></tr>
+          <tr><td>6</td><td style="font-weight:700;">Axis ELSS Tax Saver</td><td><span style="background:#dcfce7;color:#15803d;font-size:9px;padding:2px 6px;border-radius:20px;">ELSS</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">15.2%</td><td style="font-family:var(--fm);">16.6%</td><td style="font-family:var(--fm);">19.7%</td><td style="font-family:var(--fm);">₹32,450 Cr</td></tr>
+          <tr><td>7</td><td style="font-weight:700;">ICICI Pru Balanced Advantage</td><td><span style="background:var(--EUd);color:var(--EU);font-size:9px;padding:2px 6px;border-radius:20px;">Hybrid</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">12.3%</td><td style="font-family:var(--fm);">13.8%</td><td style="font-family:var(--fm);">15.2%</td><td style="font-family:var(--fm);">₹54,670 Cr</td></tr>
+          <tr><td>8</td><td style="font-weight:700;">Nippon Gold ETF FOF</td><td><span style="background:#fef3c7;color:#d97706;font-size:9px;padding:2px 6px;border-radius:20px;">Gold</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">21.8%</td><td style="font-family:var(--fm);">20.3%</td><td style="font-family:var(--fm);">18.7%</td><td style="font-family:var(--fm);">₹8,760 Cr</td></tr>
+          <tr><td>9</td><td style="font-weight:700;">SBI Bluechip Fund</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:20px;">Large Cap</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">14.8%</td><td style="font-family:var(--fm);">15.9%</td><td style="font-family:var(--fm);">18.3%</td><td style="font-family:var(--fm);">₹44,120 Cr</td></tr>
+          <tr><td>10</td><td style="font-weight:700;">HDFC Short Term Debt</td><td><span style="background:var(--s2);color:var(--t2);font-size:9px;padding:2px 6px;border-radius:20px;">Debt</span></td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.9%</td><td style="font-family:var(--fm);">7.2%</td><td style="font-family:var(--fm);">7.6%</td><td style="font-family:var(--fm);">₹14,280 Cr</td></tr>
+        </tbody></table>
+      </div>
+      <!-- MF CALCULATOR -->
+      <div style="padding:14px;border-top:1px solid var(--b1);background:var(--s2);">
+        <div style="font-size:12px;font-weight:700;margin-bottom:12px;">🧮 Mutual Fund Returns Calculator</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;align-items:end;">
+          <div>
+            <span class="lbl">Investment Type</span>
+            <select class="tool-select" id="mf-mode" onchange="mfModeChange()">
+              <option value="sip">SIP (Monthly)</option>
+              <option value="lump">Lumpsum (One-time)</option>
+            </select>
+          </div>
+          <div id="mf-sip-field">
+            <span class="lbl">Monthly SIP Amount (₹)</span>
+            <input class="tool-inp" id="mf-amount" type="number" value="10000">
+          </div>
+          <div>
+            <span class="lbl">Expected Annual Return (%)</span>
+            <input class="tool-inp" id="mf-rate" type="number" value="15" step="0.5">
+            <div style="font-size:9px;color:var(--t3);margin-top:2px;">Avg small cap ~26% · large cap ~16% · debt ~8%</div>
+          </div>
+          <div>
+            <span class="lbl">Investment Duration (years)</span>
+            <input class="tool-inp" id="mf-years" type="number" value="10" min="1" max="40">
+          </div>
+          <div>
+            <button class="tool-btn" style="background:linear-gradient(135deg,var(--AC),var(--DO));" onclick="calcMF()">Calculate Returns</button>
+          </div>
+        </div>
+        <div id="mf-result" style="margin-top:12px;"></div>
+      </div>
+    </div>
+    <div id="hub-lic" class="hub-panel" style="overflow-x:auto;padding:0;">
+      <div style="padding:8px 14px;background:linear-gradient(90deg,#1a0505,#3b0a0a);font-size:10px;font-weight:700;color:#fca5a5;display:flex;justify-content:space-between;align-items:center;">
+        <span>🏛️ Top 10 LIC Policies — India 2026</span>
+        <span style="font-size:9px;color:#7f1d1d;">Life Insurance Corporation · Not financial advice</span>
+      </div>
+      <table class="fd-table" style="min-width:660px;">
+        <thead><tr>
+          <th>#</th><th>Policy Name</th><th>Type</th><th>Entry Age</th><th>Term</th><th>Min. Sum</th><th>Key Benefit</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="font-weight:800;color:#7f1d1d;">1</td><td><div style="font-weight:700;">LIC Index Plus</div><div style="font-size:9px;color:var(--t3);">Plan 873</div></td><td><span style="background:#312e81;color:#a5b4fc;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">ULIP</span></td><td style="font-family:var(--fm);">90d–60yr</td><td style="font-family:var(--fm);">10–25 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">7–10× prem</td><td>Market-linked returns + life cover</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">2</td><td><div style="font-weight:700;">LIC Jeevan Umang</div></td><td><span style="background:#064e24;color:#4ade80;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Whole Life</span></td><td style="font-family:var(--fm);">30d–55yr</td><td style="font-family:var(--fm);">Till 100yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹2,00,000</td><td>8% annual survival benefit after premium term</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">3</td><td><div style="font-weight:700;">LIC Jeevan Utsav</div><div style="font-size:9px;color:var(--t3);">Plan 871</div></td><td><span style="background:#064e24;color:#4ade80;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Whole Life</span></td><td style="font-family:var(--fm);">30d–65yr</td><td style="font-family:var(--fm);">100−age</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹5,00,000</td><td>Lifelong cover + guaranteed income benefit</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">4</td><td><div style="font-weight:700;">LIC New Jeevan Anand</div><div style="font-size:9px;color:var(--t3);">Plan 715</div></td><td><span style="background:#1e1b4b;color:#a5b4fc;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Endowment</span></td><td style="font-family:var(--fm);">18–50yr</td><td style="font-family:var(--fm);">15–35 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹1,00,000</td><td>Maturity + death benefit (dual protection)</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">5</td><td><div style="font-weight:700;">LIC Jeevan Labh</div></td><td><span style="background:#1e1b4b;color:#a5b4fc;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Endowment</span></td><td style="font-family:var(--fm);">8–59yr</td><td style="font-family:var(--fm);">16/21/25 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹2,00,000</td><td>High bonus + limited premium payment term</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">6</td><td><div style="font-weight:700;">LIC Jeevan Amar</div></td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Term</span></td><td style="font-family:var(--fm);">18–65yr</td><td style="font-family:var(--fm);">10–40 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹25,00,000</td><td>High cover at low premium · no maturity benefit</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">7</td><td><div style="font-weight:700;">LIC Tech Term Plan</div></td><td><span style="background:#fee2e2;color:#dc2626;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Term · Online</span></td><td style="font-family:var(--fm);">18–65yr</td><td style="font-family:var(--fm);">10–40 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">₹50,00,000</td><td>Online-only · lower premium · very high cover</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">8</td><td><div style="font-weight:700;">LIC Nivesh Plus</div></td><td><span style="background:#312e81;color:#a5b4fc;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">ULIP</span></td><td style="font-family:var(--fm);">90d–70yr</td><td style="font-family:var(--fm);">10–25 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">1.25–10× prem</td><td>Single premium ULIP · market-linked upside</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">9</td><td><div style="font-weight:700;">LIC New Pension Plus</div></td><td><span style="background:#0c1a3b;color:#93c5fd;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Pension</span></td><td style="font-family:var(--fm);">25–75yr</td><td style="font-family:var(--fm);">10–42 yr</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">Unit Fund</td><td>Retirement corpus with market-linked returns</td></tr>
+          <tr><td style="font-weight:800;color:#7f1d1d;">10</td><td><div style="font-weight:700;">LIC New Jeevan Shanti</div></td><td><span style="background:#0c1a3b;color:#93c5fd;font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700;">Annuity</span></td><td style="font-family:var(--fm);">30–79yr</td><td style="font-family:var(--fm);">N/A</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">N/A</td><td>Immediate or deferred annuity for retirement</td></tr>
+        </tbody>
+      </table>
+      <div style="padding:14px;border-top:1px solid var(--b1);background:var(--s2);">
+        <div style="font-size:12px;font-weight:700;margin-bottom:12px;">🧮 LIC Premium Estimator</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;align-items:end;">
+          <div><span class="lbl">Policy Type</span>
+            <select class="tool-select" id="lic-type">
+              <option value="term">Term (Jeevan Amar)</option>
+              <option value="endowment">Endowment (Jeevan Anand)</option>
+              <option value="wholelife">Whole Life (Jeevan Umang)</option>
+            </select>
+          </div>
+          <div><span class="lbl">Sum Assured (₹)</span><input class="tool-inp" id="lic-sum" type="number" value="2500000"></div>
+          <div><span class="lbl">Age at Entry (yrs)</span><input class="tool-inp" id="lic-age" type="number" value="30" min="18" max="65"></div>
+          <div><span class="lbl">Policy Term (yrs)</span><input class="tool-inp" id="lic-term" type="number" value="20" min="10" max="40"></div>
+          <div><button class="tool-btn" style="background:linear-gradient(135deg,#991b1b,#7f1d1d);" onclick="calcLIC()">Estimate Premium</button></div>
+        </div>
+        <div id="lic-result" style="margin-top:12px;"></div>
+        <div style="font-size:9px;color:var(--t3);margin-top:8px;">⚠️ Indicative only · Actual premium depends on medical history, gender, payment mode · Consult LIC agent for exact quote</div>
+      </div>
     </div>
     <div id="hub-psb" class="hub-panel" style="overflow-x:auto;padding:0;">
       <div style="padding:8px 14px;background:var(--INd);font-size:10px;color:var(--RU);font-weight:600;">🏛️ Public Sector Banks — FD Rates Mar 18, 2026</div>
@@ -696,6 +809,460 @@ setInterval(getMarketStatus,60000);
       <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--b1);"><div style="background:var(--hdr);color:#f1f5f9;border-radius:7px;padding:5px 9px;text-align:center;min-width:40px;flex-shrink:0;"><div style="font-size:17px;font-weight:800;font-family:var(--fm);line-height:1;">31</div><div style="font-size:8px;color:#94a3b8;letter-spacing:1px;">MAR</div></div><div><div style="font-size:12px;font-weight:700;">🇮🇳 India FY2025-26 Year End<span style="font-size:8px;padding:2px 7px;border-radius:20px;font-weight:700;margin-left:5px;background:var(--INd);color:var(--IN);">India</span></div><div style="font-size:10px;color:var(--t2);">Last date: ELSS, NPS (80CCD), PPF top-up, 80C investments</div></div></div>
       <div style="display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--b1);"><div style="background:var(--hdr);color:#f1f5f9;border-radius:7px;padding:5px 9px;text-align:center;min-width:40px;flex-shrink:0;"><div style="font-size:17px;font-weight:800;font-family:var(--fm);line-height:1;">9</div><div style="font-size:8px;color:#94a3b8;letter-spacing:1px;">APR</div></div><div><div style="font-size:12px;font-weight:700;">🇮🇳 RBI MPC Meeting — Rate Decision<span style="font-size:8px;padding:2px 7px;border-radius:20px;font-weight:700;margin-left:5px;background:#fee2e2;color:#dc2626;">High Impact</span></div><div style="font-size:10px;color:var(--t2);">Previous: 6.25% · 25bps cut expected only if oil below $90</div></div></div>
       <div style="display:flex;gap:10px;padding:9px 0;"><div style="background:var(--hdr);color:#f1f5f9;border-radius:7px;padding:5px 9px;text-align:center;min-width:40px;flex-shrink:0;"><div style="font-size:17px;font-weight:800;font-family:var(--fm);line-height:1;">17</div><div style="font-size:8px;color:#94a3b8;letter-spacing:1px;">APR</div></div><div><div style="font-size:12px;font-weight:700;">🇪🇺 ECB Rate Decision<span style="font-size:8px;padding:2px 7px;border-radius:20px;font-weight:700;margin-left:5px;background:#fee2e2;color:#dc2626;">High Impact</span></div><div style="font-size:10px;color:var(--t2);">Previous: 2.25% · War inflation vs weak growth dilemma</div></div></div>
+    </div>
+  </div>
+
+  <!-- PO SCHEMES PANEL -->
+  <div id="hub-po" class="hub-panel">
+    <div style="font-size:10px;color:var(--t3);margin-bottom:12px;">🇮🇳 Post Office Savings Schemes · Govt. of India · Rates Q1 FY2025–26</div>
+
+    <!-- Reference Table -->
+    <div style="overflow-x:auto;margin-bottom:18px;">
+      <table class="fd-table" style="min-width:560px;">
+        <thead>
+          <tr>
+            <th>Scheme</th>
+            <th>Rate</th>
+            <th>Min. Invest</th>
+            <th>Lock-in</th>
+            <th>Tax Benefit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="font-weight:700;">📮 PPF</td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.1% p.a.</td><td style="font-family:var(--fm);">₹500/yr</td><td>15 years</td><td><span style="background:#dcfce7;color:#15803d;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">EEE · 80C</span></td></tr>
+          <tr><td style="font-weight:700;">👴 SCSS</td><td style="color:var(--RU);font-weight:700;font-family:var(--fm);">8.2% p.a.</td><td style="font-family:var(--fm);">₹1,000</td><td>5 years</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">80C</span></td></tr>
+          <tr><td style="font-weight:700;">📅 Post Office MIS</td><td style="color:var(--DO);font-weight:700;font-family:var(--fm);">7.4% p.a.</td><td style="font-family:var(--fm);">₹1,000</td><td>5 years</td><td><span style="background:var(--s3);color:var(--t2);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">None</span></td></tr>
+          <tr><td style="font-weight:700;">📄 NSC</td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.7% p.a.</td><td style="font-family:var(--fm);">₹1,000</td><td>5 years</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">80C</span></td></tr>
+          <tr><td style="font-weight:700;">🌾 Kisan Vikas Patra</td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.5% p.a.</td><td style="font-family:var(--fm);">₹1,000</td><td>~115 months</td><td><span style="background:var(--s3);color:var(--t2);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">None</span></td></tr>
+          <tr><td style="font-weight:700;">🏦 PO Time Deposit (5yr)</td><td style="color:var(--GR);font-weight:700;font-family:var(--fm);">7.5% p.a.</td><td style="font-family:var(--fm);">₹1,000</td><td>1–5 years</td><td><span style="background:var(--INd);color:var(--IN);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">80C (5yr)</span></td></tr>
+          <tr><td style="font-weight:700;">👧 Sukanya Samriddhi</td><td style="color:var(--RU);font-weight:700;font-family:var(--fm);">8.2% p.a.</td><td style="font-family:var(--fm);">₹250/yr</td><td>21 years</td><td><span style="background:#dcfce7;color:#15803d;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">EEE · 80C</span></td></tr>
+          <tr><td style="font-weight:700;">🔁 PO Recurring Deposit</td><td style="color:var(--t2);font-weight:700;font-family:var(--fm);">6.7% p.a.</td><td style="font-family:var(--fm);">₹100/mo</td><td>5 years</td><td><span style="background:var(--s3);color:var(--t2);font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;">None</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Calculator -->
+    <div style="font-size:13px;font-weight:700;margin-bottom:12px;">🧮 Post Office Calculator</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;">
+      <div>
+        <span class="lbl">Select Scheme</span>
+        <select class="tool-select" id="po-scheme" onchange="poSchemeChange()">
+          <option value="ppf">📮 PPF — 7.1% p.a. (15 yr)</option>
+          <option value="scss">👴 SCSS — 8.2% p.a. (5 yr)</option>
+          <option value="pomis">📅 Post Office MIS — 7.4% p.a. (5 yr)</option>
+        </select>
+
+        <!-- PPF inputs -->
+        <div id="po-ppf-inputs">
+          <span class="lbl">Annual Deposit (₹)</span>
+          <input class="tool-inp" id="ppf-annual" type="number" value="150000" min="500" max="150000">
+          <span class="lbl">Investment Duration (years, max 15)</span>
+          <input class="tool-inp" id="ppf-years" type="number" value="15" min="1" max="15">
+          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Max ₹1.5 lakh/yr · EEE tax-exempt · Compounded yearly</div>
+        </div>
+
+        <!-- SCSS inputs -->
+        <div id="po-scss-inputs" style="display:none;">
+          <span class="lbl">Lump Sum Deposit (₹)</span>
+          <input class="tool-inp" id="scss-principal" type="number" value="500000" min="1000" max="3000000">
+          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Max ₹30 lakh per account · Age 60+ · 5-year tenure · Interest paid quarterly</div>
+        </div>
+
+        <!-- POMIS inputs -->
+        <div id="po-pomis-inputs" style="display:none;">
+          <span class="lbl">Lump Sum Deposit (₹)</span>
+          <input class="tool-inp" id="pomis-principal" type="number" value="500000" min="1000" max="900000">
+          <span class="lbl">Account Type</span>
+          <select class="tool-select" id="pomis-type">
+            <option value="single">Single (max ₹9 lakh)</option>
+            <option value="joint">Joint (max ₹15 lakh)</option>
+          </select>
+          <div style="font-size:9px;color:var(--t3);margin-bottom:8px;">Monthly income scheme · 5-year tenure · Interest paid monthly</div>
+        </div>
+
+        <button class="tool-btn" style="background:var(--IN);" onclick="calcPO()">Calculate</button>
+      </div>
+      <div id="po-result" style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <div style="text-align:center;color:var(--t3);font-size:11px;">Select a scheme and click Calculate</div>
+      </div>
+      <div style="background:var(--INd);border:1px solid var(--INb);border-radius:9px;padding:14px;">
+        <div style="font-size:11px;font-weight:700;color:var(--IN);margin-bottom:10px;">💡 Scheme Highlights</div>
+        <div id="po-tips" style="font-size:11px;color:var(--t2);line-height:1.9;">
+          <div>• EEE: Invest, earn &amp; withdraw — all tax-free</div>
+          <div>• Section 80C deduction up to ₹1.5L/yr</div>
+          <div>• Partial withdrawal after 7 years</div>
+          <div>• Loan facility after 3 years</div>
+          <div>• Backed by Govt. of India — zero risk</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMI CALCULATOR PANEL -->
+  <div id="hub-emi" class="hub-panel">
+    <div style="font-size:10px;color:var(--t3);margin-bottom:14px;">🏠 Loan EMI Calculator · Home · Car · Personal · Education</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;">
+      <div>
+        <span class="lbl">Loan Type</span>
+        <select class="tool-select" id="emi-type" onchange="emiTypeChange()">
+          <option value="home">🏠 Home Loan</option>
+          <option value="car">🚗 Car Loan</option>
+          <option value="personal">💼 Personal Loan</option>
+          <option value="education">🎓 Education Loan</option>
+        </select>
+        <span class="lbl">Loan Amount (₹)</span>
+        <input class="tool-inp" id="emi-principal" type="number" value="3000000">
+        <span class="lbl">Interest Rate (% p.a.)</span>
+        <input class="tool-inp" id="emi-rate" type="number" value="8.5" step="0.1">
+        <span class="lbl">Tenure</span>
+        <div style="display:grid;grid-template-columns:2fr 1fr;gap:6px;margin-bottom:7px;">
+          <input class="tool-inp" id="emi-tenure" type="number" value="20" style="margin-bottom:0;">
+          <select class="tool-select" id="emi-unit" style="margin-bottom:0;"><option value="y">Years</option><option value="m">Months</option></select>
+        </div>
+        <div id="emi-rate-hint" style="font-size:9px;color:var(--t3);margin-bottom:8px;">Typical home loan: 8.5–9.5% · SBI 8.50%</div>
+        <button class="tool-btn" style="background:linear-gradient(135deg,var(--Eu),var(--DO));" onclick="calcEMI()">Calculate EMI</button>
+      </div>
+      <div id="emi-result" style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:180px;">
+        <div style="text-align:center;color:var(--t3);font-size:11px;">Fill details and click Calculate</div>
+      </div>
+      <div style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:14px;">
+        <div style="font-size:11px;font-weight:700;margin-bottom:10px;">📊 Typical Rates — Mar 2026</div>
+        <div id="emi-rate-table" style="font-size:11px;line-height:2.0;">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--b1);"><span>SBI Home Loan</span><span style="font-weight:700;color:var(--EU);">8.50%</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--b1);"><span>HDFC Home Loan</span><span style="font-weight:700;color:var(--EU);">8.70%</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--b1);"><span>SBI Car Loan</span><span style="font-weight:700;color:var(--DO);">9.15%</span></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--b1);"><span>HDFC Personal</span><span style="font-weight:700;color:var(--IN);">11.00%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>SBI Education</span><span style="font-weight:700;color:var(--GR);">8.15%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INCOME TAX CALCULATOR PANEL -->
+  <div id="hub-tax" class="hub-panel">
+    <div style="font-size:10px;color:var(--t3);margin-bottom:14px;">💰 India Income Tax Calculator · FY 2025–26 · Old vs New Regime comparison</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;">
+      <div>
+        <span class="lbl">Annual Income (₹)</span>
+        <input class="tool-inp" id="tax-income" type="number" value="1200000">
+        <span class="lbl">Age Group</span>
+        <select class="tool-select" id="tax-age">
+          <option value="general">Below 60 years</option>
+          <option value="senior">60–80 years (Senior)</option>
+          <option value="supersenior">Above 80 years (Super Senior)</option>
+        </select>
+        <span class="lbl" style="margin-top:4px;">Old Regime Deductions</span>
+        <div style="background:var(--s2);border:1px solid var(--b1);border-radius:7px;padding:10px;margin-bottom:7px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <span style="font-size:11px;color:var(--t2);">80C (PF, PPF, LIC, ELSS)</span>
+            <input type="number" id="tax-80c" value="150000" style="width:90px;background:var(--s1);border:1px solid var(--b1);color:var(--tx);padding:3px 6px;border-radius:5px;font-size:11px;font-family:var(--fm);outline:none;">
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <span style="font-size:11px;color:var(--t2);">80D (Health Insurance)</span>
+            <input type="number" id="tax-80d" value="25000" style="width:90px;background:var(--s1);border:1px solid var(--b1);color:var(--tx);padding:3px 6px;border-radius:5px;font-size:11px;font-family:var(--fm);outline:none;">
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;color:var(--t2);">HRA / Other (80TTA etc.)</span>
+            <input type="number" id="tax-hra" value="50000" style="width:90px;background:var(--s1);border:1px solid var(--b1);color:var(--tx);padding:3px 6px;border-radius:5px;font-size:11px;font-family:var(--fm);outline:none;">
+          </div>
+        </div>
+        <button class="tool-btn" style="background:linear-gradient(135deg,#d97706,#dc2626);" onclick="calcTax()">Compare Regimes</button>
+      </div>
+
+      <!-- Tax Result — spans 2 columns on wide screens -->
+      <div id="tax-result" style="background:var(--s2);border:1px solid var(--b1);border-radius:9px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:200px;grid-column:span 2;">
+        <div style="text-align:center;color:var(--t3);font-size:11px;">Enter income and click Compare Regimes</div>
+      </div>
+    </div>
+
+    <!-- Tax Slabs Reference -->
+    <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div style="background:var(--s1);border:1px solid var(--b1);border-radius:9px;overflow:hidden;">
+        <div style="padding:8px 12px;background:linear-gradient(90deg,#052e16,#064e24);font-size:10px;font-weight:700;color:#4ade80;">📗 New Regime Slabs — FY 2025–26</div>
+        <table class="fd-table">
+          <thead><tr><th>Income Range</th><th>Tax Rate</th></tr></thead>
+          <tbody>
+            <tr><td>Up to ₹4,00,000</td><td style="color:var(--GR);font-weight:700;">Nil</td></tr>
+            <tr><td>₹4,00,001 – ₹8,00,000</td><td style="font-family:var(--fm);font-weight:700;">5%</td></tr>
+            <tr><td>₹8,00,001 – ₹12,00,000</td><td style="font-family:var(--fm);font-weight:700;">10%</td></tr>
+            <tr><td>₹12,00,001 – ₹16,00,000</td><td style="font-family:var(--fm);font-weight:700;">15%</td></tr>
+            <tr><td>₹16,00,001 – ₹20,00,000</td><td style="font-family:var(--fm);font-weight:700;">20%</td></tr>
+            <tr><td>₹20,00,001 – ₹24,00,000</td><td style="font-family:var(--fm);font-weight:700;">25%</td></tr>
+            <tr><td>Above ₹24,00,000</td><td style="color:var(--RD);font-weight:700;">30%</td></tr>
+          </tbody>
+        </table>
+        <div style="padding:6px 12px;font-size:9px;color:var(--t3);">Standard deduction ₹75,000 · Rebate u/s 87A: nil tax up to ₹12L income</div>
+      </div>
+      <div style="background:var(--s1);border:1px solid var(--b1);border-radius:9px;overflow:hidden;">
+        <div style="padding:8px 12px;background:linear-gradient(90deg,#1e1b4b,#312e81);font-size:10px;font-weight:700;color:#a5b4fc;">📘 Old Regime Slabs — FY 2025–26</div>
+        <table class="fd-table">
+          <thead><tr><th>Income Range</th><th>Tax Rate</th></tr></thead>
+          <tbody>
+            <tr><td>Up to ₹2,50,000</td><td style="color:var(--GR);font-weight:700;">Nil</td></tr>
+            <tr><td>₹2,50,001 – ₹5,00,000</td><td style="font-family:var(--fm);font-weight:700;">5%</td></tr>
+            <tr><td>₹5,00,001 – ₹10,00,000</td><td style="font-family:var(--fm);font-weight:700;">20%</td></tr>
+            <tr><td>Above ₹10,00,000</td><td style="color:var(--RD);font-weight:700;">30%</td></tr>
+          </tbody>
+        </table>
+        <div style="padding:6px 12px;font-size:9px;color:var(--t3);">Standard deduction ₹50,000 · Rebate u/s 87A: nil tax up to ₹5L income · All deductions allowed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NRI CORNER -->
+  <div class="hub-section" style="margin-top:18px;margin-bottom:24px;">
+    <div class="hub-head" style="background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(6,182,212,.06));">
+      <div>
+        <div class="hub-title">🌏 NRI Corner</div>
+        <div class="hub-sub" style="margin-top:2px;">Accounts · Remittance · Tax · RBI Rules · Status & Docs</div>
+      </div>
+      <div style="font-size:20px;">🇮🇳</div>
+    </div>
+    <div class="nri-tabs">
+      <button class="ntab active" onclick="switchNRI('accounts',this)">🏦 Accounts</button>
+      <button class="ntab" onclick="switchNRI('remittance',this)">💸 Remittance</button>
+      <button class="ntab" onclick="switchNRI('tax',this)">📋 Tax & TDS</button>
+      <button class="ntab" onclick="switchNRI('rbi',this)">📜 RBI Rules</button>
+      <button class="ntab" onclick="switchNRI('status',this)">🪪 Status & Docs</button>
+    </div>
+
+    <!-- ACCOUNTS TAB -->
+    <div id="nri-accounts" class="nri-panel active">
+      <div class="nri-section-head">NRE vs NRO vs FCNR — Account Comparison</div>
+      <div style="overflow-x:auto;">
+        <table class="nri-table" style="min-width:620px;">
+          <thead><tr><th>Feature</th><th>NRE Account</th><th>NRO Account</th><th>FCNR(B) Account</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;">Full Form</td><td>Non-Resident External</td><td>Non-Resident Ordinary</td><td>Foreign Currency Non-Resident (Bank)</td></tr>
+            <tr><td style="font-weight:700;">Currency</td><td>INR (converted on deposit)</td><td>INR</td><td>Foreign currency (USD, EUR, GBP, etc.)</td></tr>
+            <tr><td style="font-weight:700;">Who Can Open</td><td>NRIs / PIOs</td><td>NRIs / PIOs</td><td>NRIs / PIOs</td></tr>
+            <tr><td style="font-weight:700;">Source of Funds</td><td>Foreign earnings only</td><td>India income + foreign</td><td>Foreign earnings only</td></tr>
+            <tr><td style="font-weight:700;">Taxability (India)</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Tax FREE</span></td><td><span class="nri-badge" style="background:#fee2e2;color:#dc2626;">Taxable</span></td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Tax FREE</span></td></tr>
+            <tr><td style="font-weight:700;">Repatriation</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Freely repatriable</span></td><td><span class="nri-badge" style="background:#fef3c7;color:#d97706;">Up to $1M/yr</span></td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Freely repatriable</span></td></tr>
+            <tr><td style="font-weight:700;">FD Interest Rate</td><td style="font-family:var(--fm);font-weight:700;">6.5–7.5% p.a.</td><td style="font-family:var(--fm);font-weight:700;">6.5–7.5% p.a.</td><td style="font-family:var(--fm);font-weight:700;">4.5–6.0% p.a. (USD)</td></tr>
+            <tr><td style="font-weight:700;">Exchange Rate Risk</td><td><span class="nri-badge" style="background:#fee2e2;color:#dc2626;">Yes — INR fluctuation</span></td><td><span class="nri-badge" style="background:#fee2e2;color:#dc2626;">Yes — INR fluctuation</span></td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">No — held in foreign currency</span></td></tr>
+            <tr><td style="font-weight:700;">Joint Account</td><td>With NRI only</td><td>With NRI or resident</td><td>With NRI only</td></tr>
+            <tr><td style="font-weight:700;">Best For</td><td>Sending money to India, tax-free savings</td><td>India-sourced income (rent, dividends)</td><td>Avoiding INR risk, forex savings</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+        <div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:8px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:var(--EU);margin-bottom:6px;">💡 Germany → India</div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.8;">Use <strong>NRE FD</strong> for salary remittances — tax-free in India, freely repatriable back to Germany. Open at SBI Frankfurt or HDFC online.</div>
+        </div>
+        <div style="background:var(--INd);border:1px solid var(--INb);border-radius:8px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:var(--IN);margin-bottom:6px;">💡 India Income (Rent/Dividends)</div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.8;">Use <strong>NRO account</strong> for Indian income. TDS will be deducted. File ITR in India to claim refund if below threshold.</div>
+        </div>
+        <div style="background:#ecfeff;border:1px solid #a5f3fc;border-radius:8px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#0891b2;margin-bottom:6px;">💡 Avoid Exchange Rate Risk</div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.8;">Use <strong>FCNR(B)</strong> if you want to park EUR/USD in India without converting to INR. Ideal for short-term parking.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REMITTANCE TAB -->
+    <div id="nri-remittance" class="nri-panel">
+      <div class="nri-section-head">Remittance Cost Comparison — Sending Money to India</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table class="nri-table" style="min-width:580px;">
+          <thead><tr><th>Platform</th><th>Transfer Fee</th><th>Exchange Rate Margin</th><th>Total Cost (₹1L)</th><th>Transfer Time</th><th>Best For</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;">💚 Wise (TransferWise)</td><td style="font-family:var(--fm);">€3–8</td><td style="color:var(--GR);font-weight:700;">Mid-market rate (~0.4%)</td><td style="font-family:var(--fm);font-weight:700;color:var(--GR);">~₹400–500</td><td>Same day – 1 day</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Best overall</span></td></tr>
+            <tr><td style="font-weight:700;">🔵 Google Pay / GPay</td><td style="font-family:var(--fm);">₹0 (UAE only)</td><td style="color:var(--GR);font-weight:700;">~0.5%</td><td style="font-family:var(--fm);font-weight:700;color:var(--GR);">~₹500</td><td>Instant</td><td><span class="nri-badge" style="background:#eff6ff;color:#2563eb;">UAE → India</span></td></tr>
+            <tr><td style="font-weight:700;">🟠 Western Union</td><td style="font-family:var(--fm);">€5–15</td><td style="color:var(--WN);font-weight:700;">1.5–2.5%</td><td style="font-family:var(--fm);font-weight:700;color:var(--WN);">~₹2,000–3,000</td><td>Minutes–1 day</td><td><span class="nri-badge" style="background:#fef3c7;color:#d97706;">Cash pickup</span></td></tr>
+            <tr><td style="font-weight:700;">🔴 MoneyGram</td><td style="font-family:var(--fm);">€6–18</td><td style="color:var(--WN);font-weight:700;">1.5–2.0%</td><td style="font-family:var(--fm);font-weight:700;color:var(--WN);">~₹2,200–3,500</td><td>Minutes–1 day</td><td><span class="nri-badge" style="background:#fef3c7;color:#d97706;">Cash pickup</span></td></tr>
+            <tr><td style="font-weight:700;">🏛️ SBI / HDFC SWIFT</td><td style="font-family:var(--fm);">€15–25</td><td style="color:var(--RD);font-weight:700;">1.0–1.5% + correspondent</td><td style="font-family:var(--fm);font-weight:700;color:var(--RD);">~₹3,000–5,000</td><td>2–5 days</td><td><span class="nri-badge" style="background:#fee2e2;color:#dc2626;">Large amounts only</span></td></tr>
+            <tr><td style="font-weight:700;">📱 Remitly</td><td style="font-family:var(--fm);">€2–4</td><td style="color:var(--GR);font-weight:700;">~0.6–1.0%</td><td style="font-family:var(--fm);font-weight:700;color:var(--GR);">~₹800–1,200</td><td>Same day</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Good alternative</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nri-section-head">Remittance Calculator</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;align-items:end;">
+        <div>
+          <span class="lbl">Amount to Send</span>
+          <input class="tool-inp" id="rem-amount" type="number" value="1000">
+        </div>
+        <div>
+          <span class="lbl">From Currency</span>
+          <select class="tool-select" id="rem-from">
+            <option value="EUR">🇪🇺 EUR</option>
+            <option value="USD">🇺🇸 USD</option>
+            <option value="GBP">🇬🇧 GBP</option>
+            <option value="AED">🇦🇪 AED</option>
+            <option value="SGD">🇸🇬 SGD</option>
+          </select>
+        </div>
+        <div>
+          <span class="lbl">Platform</span>
+          <select class="tool-select" id="rem-platform">
+            <option value="wise">💚 Wise</option>
+            <option value="remitly">📱 Remitly</option>
+            <option value="wu">🟠 Western Union</option>
+            <option value="swift">🏛️ Bank SWIFT</option>
+          </select>
+        </div>
+        <div>
+          <button class="tool-btn" style="background:linear-gradient(135deg,#0284c7,#0891b2);" onclick="calcRemittance()">Calculate</button>
+        </div>
+      </div>
+      <div id="rem-result" style="margin-top:12px;"></div>
+      <div style="font-size:9px;color:var(--t3);margin-top:8px;">⚠️ Uses indicative exchange rates · Actual rates vary by platform and date · Always verify before transferring</div>
+    </div>
+
+    <!-- TAX & TDS TAB -->
+    <div id="nri-tax" class="nri-panel">
+      <div class="nri-section-head">TDS Rates — NRI vs Resident</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table class="nri-table" style="min-width:520px;">
+          <thead><tr><th>Income Type</th><th>NRI TDS Rate</th><th>Resident TDS Rate</th><th>Section</th><th>DTAA Benefit</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;">NRO FD Interest</td><td style="color:var(--RD);font-weight:700;font-family:var(--fm);">30% + surcharge + cess</td><td style="font-family:var(--fm);">10%</td><td style="font-family:var(--fm);">195</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Available</span></td></tr>
+            <tr><td style="font-weight:700;">NRE FD Interest</td><td style="color:var(--GR);font-weight:700;">NIL (Tax Free)</td><td style="color:var(--GR);font-weight:700;">NIL</td><td style="font-family:var(--fm);">10(4)</td><td>N/A</td></tr>
+            <tr><td style="font-weight:700;">Rental Income</td><td style="color:var(--RD);font-weight:700;font-family:var(--fm);">30%</td><td style="font-family:var(--fm);">10%</td><td style="font-family:var(--fm);">195</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Available</span></td></tr>
+            <tr><td style="font-weight:700;">Short-Term Capital Gains (Equity)</td><td style="color:var(--RD);font-weight:700;font-family:var(--fm);">15%</td><td style="font-family:var(--fm);">15%</td><td style="font-family:var(--fm);">111A</td><td><span class="nri-badge" style="background:#fef3c7;color:#d97706;">Limited</span></td></tr>
+            <tr><td style="font-weight:700;">Long-Term Capital Gains (Equity)</td><td style="color:var(--WN);font-weight:700;font-family:var(--fm);">10% (above ₹1L)</td><td style="font-family:var(--fm);">10%</td><td style="font-family:var(--fm);">112A</td><td><span class="nri-badge" style="background:#fef3c7;color:#d97706;">Limited</span></td></tr>
+            <tr><td style="font-weight:700;">Property Sale (LTCG)</td><td style="color:var(--RD);font-weight:700;font-family:var(--fm);">20% + surcharge</td><td style="font-family:var(--fm);">20%</td><td style="font-family:var(--fm);">112</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Available</span></td></tr>
+            <tr><td style="font-weight:700;">Dividends</td><td style="color:var(--RD);font-weight:700;font-family:var(--fm);">20%</td><td style="font-family:var(--fm);">10%</td><td style="font-family:var(--fm);">115A</td><td><span class="nri-badge" style="background:#dcfce7;color:#15803d;">Available</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nri-section-head">DTAA Countries — India Tax Treaty List</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-bottom:16px;">
+        <div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--EU);">🇩🇪 Germany</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · FD interest rate reduced · Avoids double taxation on salary · Submit Form 10F + TRC</div></div>
+        <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:#7c3aed;">🇦🇪 UAE</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · UAE has no income tax · India tax on India-sourced income only · Very NRI-friendly</div></div>
+        <div style="background:var(--USd);border:1px solid var(--USb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--US);">🇬🇧 UK</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · Tax credit allowed · Dividends and interest rates negotiated</div></div>
+        <div style="background:var(--USd);border:1px solid var(--USb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--US);">🇺🇸 USA</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · Tax credit method · FBAR reporting required for Indian accounts &gt;$10,000</div></div>
+        <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:#7c3aed;">🇸🇦 Saudi Arabia</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · No personal income tax in KSA · India taxes India-sourced income</div></div>
+        <div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--EU);">🇸🇬 Singapore</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · Exemption method · Popular for tech & finance NRIs</div></div>
+        <div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--EU);">🇳🇱 Netherlands</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · Relevant for Eindhoven / Amsterdam NRIs</div></div>
+        <div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:7px;padding:10px;"><div style="font-size:11px;font-weight:700;color:var(--EU);">🇸🇪 Sweden</div><div style="font-size:10px;color:var(--t2);margin-top:3px;line-height:1.6;">DTAA in force · Relevant for Gothenburg / Stockholm NRIs</div></div>
+      </div>
+      <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:7px;padding:10px;font-size:11px;color:#92400e;">
+        <strong>To claim DTAA benefit:</strong> Submit Tax Residency Certificate (TRC) from your country + Form 10F to the Indian payer before TDS is deducted. Without these, full TDS will be deducted.
+      </div>
+    </div>
+
+    <!-- RBI RULES TAB -->
+    <div id="nri-rbi" class="nri-panel">
+      <div class="nri-section-head">Repatriation Rules</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table class="nri-table" style="min-width:500px;">
+          <thead><tr><th>Item</th><th>Limit / Rule</th><th>Conditions</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;">Current income (rent, dividends, salary)</td><td style="color:var(--GR);font-weight:700;">Full amount</td><td>Via NRO, net of taxes</td></tr>
+            <tr><td style="font-weight:700;">NRO account balance (capital)</td><td style="font-weight:700;font-family:var(--fm);">USD 1 million / year</td><td>Net of taxes, with CA certificate (Form 15CB)</td></tr>
+            <tr><td style="font-weight:700;">NRE account</td><td style="color:var(--GR);font-weight:700;">Freely repatriable</td><td>No limit, no CA certificate needed</td></tr>
+            <tr><td style="font-weight:700;">FCNR(B) maturity proceeds</td><td style="color:var(--GR);font-weight:700;">Freely repatriable</td><td>In same foreign currency</td></tr>
+            <tr><td style="font-weight:700;">Property sale proceeds</td><td style="font-weight:700;font-family:var(--fm);">USD 1 million / year</td><td>Max 2 residential properties lifetime via NRO route</td></tr>
+            <tr><td style="font-weight:700;">Inheritance</td><td style="font-weight:700;font-family:var(--fm);">USD 1 million / year</td><td>Includes inherited property proceeds</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nri-section-head">What NRIs Can & Cannot Invest In</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+        <div style="background:#dcfce7;border:1px solid #bbf7d0;border-radius:8px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#15803d;margin-bottom:8px;">✅ Allowed</div>
+          <div style="font-size:11px;color:var(--t2);line-height:2;">
+            <div>• Stocks & equity MFs (via NRE/NRO demat — PIS route)</div>
+            <div>• Direct equity (BSE/NSE) via PIS account</div>
+            <div>• NRE / NRO / FCNR Fixed Deposits</div>
+            <div>• Immovable property (residential & commercial)</div>
+            <div>• Govt bonds, NCDs, debt MFs</div>
+            <div>• NPS (National Pension System)</div>
+            <div>• PPF — existing accounts can continue, NEW accounts NOT allowed</div>
+            <div>• Life insurance (LIC, HDFC Life, etc.)</div>
+            <div>• Startup investments (Angel / VC rounds)</div>
+          </div>
+        </div>
+        <div style="background:#fee2e2;border:1px solid #fecaca;border-radius:8px;padding:12px;">
+          <div style="font-size:11px;font-weight:700;color:#dc2626;margin-bottom:8px;">❌ Not Allowed</div>
+          <div style="font-size:11px;color:var(--t2);line-height:2;">
+            <div>• Opening new PPF account after becoming NRI</div>
+            <div>• Investing in Small Savings Schemes (NSC, SCSS, KVP) as NRI</div>
+            <div>• Agricultural / plantation / farmhouse property</div>
+            <div>• Intraday trading on Indian stock exchanges</div>
+            <div>• Futures & Options (F&O) trading</div>
+            <div>• Chit funds</div>
+            <div>• Carrying foreign currency &gt;$5,000 cash into India</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:7px;padding:10px;font-size:11px;color:#1d4ed8;">
+        <strong>PIS Account:</strong> Portfolio Investment Scheme account (linked to your NRE/NRO) is mandatory for NRIs to buy/sell shares on Indian stock exchanges. Apply via your Indian bank (SBI, HDFC, ICICI etc.).
+      </div>
+    </div>
+
+    <!-- STATUS & DOCS TAB -->
+    <div id="nri-status" class="nri-panel">
+      <div class="nri-section-head">NRI vs OCI vs PIO — Status Comparison</div>
+      <div style="overflow-x:auto;margin-bottom:16px;">
+        <table class="nri-table" style="min-width:580px;">
+          <thead><tr><th>Feature</th><th>NRI</th><th>OCI (Overseas Citizen)</th><th>PIO (Person of Indian Origin)</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;">Definition</td><td>Indian passport holder living abroad &gt;182 days/yr</td><td>Foreign citizen of Indian origin with OCI card</td><td>Foreign citizen with Indian-origin grandparents (PIO card discontinued 2015 — merged into OCI)</td></tr>
+            <tr><td style="font-weight:700;">Passport</td><td>Indian</td><td>Foreign (with OCI card)</td><td>Foreign (legacy — merged to OCI)</td></tr>
+            <tr><td style="font-weight:700;">Visa</td><td>Not needed for India</td><td>Lifelong multi-entry visa to India</td><td>Same as OCI now</td></tr>
+            <tr><td style="font-weight:700;">Work in India</td><td>Yes, freely</td><td>Yes (most sectors)</td><td>Yes</td></tr>
+            <tr><td style="font-weight:700;">Buy Property</td><td>Yes (residential & commercial)</td><td>Yes (residential & commercial)</td><td>Yes</td></tr>
+            <tr><td style="font-weight:700;">Vote in India</td><td>Yes (if not deregistered)</td><td>No</td><td>No</td></tr>
+            <tr><td style="font-weight:700;">Bank Accounts</td><td>NRE / NRO / FCNR</td><td>NRE / NRO / FCNR</td><td>NRE / NRO / FCNR</td></tr>
+            <tr><td style="font-weight:700;">Tax Residency</td><td>Non-resident for India tax</td><td>Non-resident for India tax</td><td>Non-resident for India tax</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="nri-section-head">PAN Card for NRIs</div>
+      <div style="background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:12px;margin-bottom:14px;font-size:11px;color:var(--t2);line-height:2;">
+        <div>• PAN is <strong>mandatory</strong> for NRIs if they have any taxable income in India (rent, capital gains, FD interest)</div>
+        <div>• Required to open NRE/NRO account, buy/sell property, invest in MFs or stocks</div>
+        <div>• Apply online via NSDL or UTIITSL — submit passport copy + address proof</div>
+        <div>• No need to surrender PAN when becoming NRI — just update residential status</div>
+        <div>• Without PAN — TDS deducted at higher rate of 20% under Section 206AA</div>
+      </div>
+
+      <div class="nri-section-head">NPS for NRIs</div>
+      <div style="background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:12px;margin-bottom:14px;font-size:11px;color:var(--t2);line-height:2;">
+        <div>• NRIs <strong>can invest</strong> in NPS (National Pension System) — both Tier I and Tier II</div>
+        <div>• Minimum contribution: ₹500/year (Tier I), ₹250/year (Tier II)</div>
+        <div>• Tax benefit: 80CCD(1) up to ₹1.5L + additional 80CCD(1B) ₹50,000</div>
+        <div>• On maturity/exit — repatriation only permitted for contributions from NRE account</div>
+        <div>• Account becomes inactive if contributor becomes non-Indian citizen (OCI/foreign passport)</div>
+      </div>
+
+      <div class="nri-section-head">NRI Home Loan</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-bottom:14px;align-items:end;">
+        <div>
+          <span class="lbl">Annual Income (₹ equivalent)</span>
+          <input class="tool-inp" id="hl-income" type="number" value="2400000" placeholder="Annual income in ₹">
+        </div>
+        <div>
+          <span class="lbl">Existing EMIs / month (₹)</span>
+          <input class="tool-inp" id="hl-emi" type="number" value="0" placeholder="Existing EMIs">
+        </div>
+        <div>
+          <span class="lbl">Interest Rate (% p.a.)</span>
+          <input class="tool-inp" id="hl-rate" type="number" value="9.0" step="0.1">
+        </div>
+        <div>
+          <span class="lbl">Loan Tenure (years)</span>
+          <input class="tool-inp" id="hl-tenure" type="number" value="20" min="5" max="30">
+        </div>
+        <div>
+          <button class="tool-btn" style="background:linear-gradient(135deg,#0369a1,#0284c7);" onclick="calcNRIHomeLoan()">Check Eligibility</button>
+        </div>
+      </div>
+      <div id="hl-result"></div>
+      <div style="background:var(--s2);border:1px solid var(--b1);border-radius:8px;padding:12px;margin-top:12px;font-size:11px;color:var(--t2);line-height:2;">
+        <div style="font-weight:700;margin-bottom:4px;">NRI Home Loan Key Facts:</div>
+        <div>• Eligible: NRIs with Indian passport or OCI card with stable foreign income</div>
+        <div>• Max loan: Up to 80% of property value (LTV)</div>
+        <div>• Repayment: Only via NRE/NRO account — cash payments not allowed</div>
+        <div>• Typical rate: 8.75–9.50% p.a. (slightly higher than resident loans)</div>
+        <div>• Documents: Passport, visa, employment contract, 6-month payslips, NRE/NRO statements</div>
+        <div>• Banks: SBI (NRI Home Loans), HDFC, ICICI, Axis — all offer NRI-specific products</div>
+      </div>
     </div>
   </div>
 </main>
@@ -766,7 +1333,7 @@ setInterval(getMarketStatus,60000);
       <a href="https://www.cnbc.com/markets" target="_blank" rel="noopener" style="display:block;font-size:11px;color:#64748b;">CNBC Markets</a>
     </div>
     <div><h4 style="font-size:8px;letter-spacing:2px;color:#475569;text-transform:uppercase;margin-bottom:8px;font-weight:700;">Contact</h4>
-      <a href="mailto:finworldai@gmail.com" style="display:block;font-size:11px;color:#64748b;">finworldai@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#6b0d02051c0419070f0a022b0c060a020745080406" style="display:block;font-size:11px;color:#64748b;"><span class="__cf_email__" data-cfemail="a2c4cbccd5cdd0cec6c3cbe2c5cfc3cbce8cc1cdcf">[email&#160;protected]</span></a>
     </div>
   </div>
   <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid #1e293b;font-size:10px;color:#475569;">
@@ -774,7 +1341,7 @@ setInterval(getMarketStatus,60000);
     <span>RSS feeds · Not financial advice</span>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var REG='all',CAT='All',Q='',ACTIVE_PANEL=null;
 var apiKey='';
 var RSS_ARTICLES=[],LIVE_ARTICLES=[],RT=null,FX_RATES={};
@@ -1102,6 +1669,169 @@ function openInlineCrypto(btn){
   document.getElementById('panelCryptoBody').innerHTML=buildCryptoRows();
   setTimeout(function(){document.getElementById('inlinePanel').scrollIntoView({behavior:'smooth',block:'nearest'});},80);
 }
+function openInlineLIC(btn){
+  if(ACTIVE_PANEL==='lic'){closeInlinePanel();return;}
+  closeInlinePanel();ACTIVE_PANEL='lic';
+  document.querySelectorAll('.cat-btn').forEach(function(b){b.classList.remove('active');});
+  btn.style.cssText='background:#3b0a0a;color:#fecaca;border-color:#ef4444;font-weight:700;padding:4px 11px;border-radius:20px;border-style:solid;font-size:11px;cursor:pointer;box-shadow:0 0 12px rgba(239,68,68,.35);font-family:var(--fo);';
+  document.getElementById('inlinePanel').style.display='block';
+  document.getElementById('panelLIC').style.display='block';
+  setTimeout(function(){document.getElementById('inlinePanel').scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+// ── NRI CORNER ──
+function switchNRI(tab,el){
+  document.querySelectorAll('.nri-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.ntab').forEach(function(b){b.classList.remove('active');});
+  var panel=document.getElementById('nri-'+tab);
+  if(panel) panel.classList.add('active');
+  if(el) el.classList.add('active');
+}
+var NRI_FX={EUR:93.5,USD:86.2,GBP:109.8,AED:23.5,SGD:64.1};
+var NRI_PLATFORMS={
+  wise:{fee:6,margin:0.004,name:'Wise'},
+  remitly:{fee:3,margin:0.008,name:'Remitly'},
+  wu:{fee:12,margin:0.020,name:'Western Union'},
+  swift:{fee:20,margin:0.015,name:'Bank SWIFT'}
+};
+function calcRemittance(){
+  var amount=parseFloat(document.getElementById('rem-amount').value)||0;
+  var from=document.getElementById('rem-from').value;
+  var platform=document.getElementById('rem-platform').value;
+  if(!amount){document.getElementById('rem-result').innerHTML='<div style="color:var(--RD);font-size:12px;">Enter amount.</div>';return;}
+  var rate=NRI_FX[from]||93.5;
+  var p=NRI_PLATFORMS[platform];
+  var gross=amount*rate;
+  var feeInr=p.fee*rate;
+  var marginLoss=gross*p.margin;
+  var received=Math.round(gross-feeInr-marginLoss);
+  var totalCost=Math.round(feeInr+marginLoss);
+  var fmtI=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  // Also compute Wise for comparison
+  var wise=NRI_PLATFORMS.wise;
+  var wiseRec=Math.round(gross-(wise.fee*rate)-(gross*wise.margin));
+  var saving=received<wiseRec?fmtI(wiseRec-received)+' more with Wise':'';
+  document.getElementById('rem-result').innerHTML=
+    '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:8px;">'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">RECIPIENT GETS</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtI(received)+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">TOTAL COST</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:var(--RD);">'+fmtI(totalCost)+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">EXCHANGE RATE</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:var(--DO);">1 '+from+' = ₹'+rate+'</div></div>'
+    +'</div>'
+    +(saving?'<div style="background:#dcfce7;border:1px solid #bbf7d0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700;color:#15803d;">💡 You could receive '+saving+'</div>':'<div style="background:#dcfce7;border:1px solid #bbf7d0;border-radius:7px;padding:8px 12px;font-size:11px;font-weight:700;color:#15803d;">✓ '+p.name+' is the best option for this transfer</div>');
+}
+function calcNRIHomeLoan(){
+  var income=parseFloat(document.getElementById('hl-income').value)||0;
+  var existingEMI=parseFloat(document.getElementById('hl-emi').value)||0;
+  var rate=parseFloat(document.getElementById('hl-rate').value)||9.0;
+  var tenure=parseInt(document.getElementById('hl-tenure').value)||20;
+  if(!income){document.getElementById('hl-result').innerHTML='<div style="color:var(--RD);font-size:12px;">Enter annual income.</div>';return;}
+  var monthlyIncome=income/12;
+  var maxEMI=monthlyIncome*0.50-existingEMI; // 50% FOIR (Fixed Obligation to Income Ratio)
+  var mr=rate/1200, n=tenure*12;
+  var maxLoan=maxEMI*(Math.pow(1+mr,n)-1)/(mr*Math.pow(1+mr,n));
+  var maxProperty=maxLoan/0.8; // 80% LTV
+  var fmtI=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  var eligible=maxLoan>100000;
+  document.getElementById('hl-result').innerHTML=
+    '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;">'
+    +'<div style="background:'+(eligible?'#dcfce7':'#fee2e2')+';border:1px solid '+(eligible?'#bbf7d0':'#fecaca')+';border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;font-weight:700;color:'+(eligible?'#15803d':'#dc2626')+';">MAX LOAN ELIGIBLE</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:'+(eligible?'#15803d':'#dc2626')+';">'+fmtI(Math.max(0,maxLoan))+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">MAX EMI CAPACITY</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtI(Math.max(0,maxEMI))+'/mo</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">PROPERTY VALUE (80% LTV)</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:var(--RU);">'+fmtI(Math.max(0,maxProperty))+'</div></div>'
+    +'</div>';
+}
+// ── MF CALCULATOR ──
+function mfModeChange(){
+  var mode=document.getElementById('mf-mode').value;
+  var lbl=document.querySelector('#mf-sip-field .lbl');
+  var inp=document.getElementById('mf-amount');
+  if(mode==='lump'){lbl.textContent='Lumpsum Amount (₹)';inp.value=100000;}
+  else{lbl.textContent='Monthly SIP Amount (₹)';inp.value=10000;}
+  document.getElementById('mf-result').innerHTML='';
+}
+function calcMF(){
+  var mode=document.getElementById('mf-mode').value;
+  var amount=parseFloat(document.getElementById('mf-amount').value)||0;
+  var rate=parseFloat(document.getElementById('mf-rate').value)||0;
+  var years=parseInt(document.getElementById('mf-years').value)||0;
+  if(!amount||!rate||!years){document.getElementById('mf-result').innerHTML='<div style="color:var(--RD);font-size:12px;">Fill all fields.</div>';return;}
+  var maturity,invested,gains;
+  if(mode==='sip'){
+    var n=years*12, mr=rate/1200;
+    maturity=amount*((Math.pow(1+mr,n)-1)/mr)*(1+mr);
+    invested=amount*n;
+  } else {
+    maturity=amount*Math.pow(1+rate/100,years);
+    invested=amount;
+  }
+  gains=maturity-invested;
+  var pct=Math.round((gains/maturity)*100);
+  var fmtI=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  document.getElementById('mf-result').innerHTML=
+    '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:8px;">'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">MATURITY VALUE</div>'
+    +'<div style="font-size:16px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtI(maturity)+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">INVESTED</div>'
+    +'<div style="font-size:16px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtI(invested)+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">GAINS</div>'
+    +'<div style="font-size:16px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtI(gains)+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:var(--t3);font-weight:700;">WEALTH GAIN</div>'
+    +'<div style="font-size:16px;font-weight:800;font-family:var(--fm);color:var(--AC);">'+pct+'%</div></div>'
+    +'</div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;">'
+    +'<div style="font-size:9px;font-weight:700;color:var(--t2);margin-bottom:5px;">GROWTH BREAKUP</div>'
+    +'<div style="height:9px;background:var(--b1);border-radius:5px;overflow:hidden;display:flex;">'
+    +'<div style="height:9px;width:'+(100-pct)+'%;background:var(--DO);"></div>'
+    +'<div style="height:9px;width:'+pct+'%;background:var(--GR);"></div></div>'
+    +'<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t3);margin-top:3px;">'
+    +'<span style="color:var(--DO);">■ Invested '+(100-pct)+'%</span>'
+    +'<span style="color:var(--GR);">■ Gains '+pct+'%</span></div>'
+    +'</div>';
+}
+function calcLIC(){
+  var type=document.getElementById('lic-type').value;
+  var sum=parseFloat(document.getElementById('lic-sum').value)||0;
+  var age=parseInt(document.getElementById('lic-age').value)||30;
+  var term=parseInt(document.getElementById('lic-term').value)||20;
+  if(!sum){document.getElementById('lic-result').innerHTML='<div style="color:#f87171;font-size:12px;">Enter sum assured.</div>';return;}
+  var baseRates={term:0.0028,endowment:0.055,wholelife:0.042};
+  var ageFactor=1+Math.max(0,(age-30))*0.02;
+  var termFactor=type==='term'?Math.max(0.6,1-(term-20)*0.015):1;
+  var annualPrem=Math.round((sum/1000)*baseRates[type]*1000*ageFactor*termFactor/100)*100;
+  var monthlyPrem=Math.round(annualPrem/12/10)*10;
+  var totalPaid=annualPrem*term;
+  var maturity=type==='term'?0:type==='endowment'?Math.round(sum*1.45):Math.round(sum*1.3);
+  var fmtR=function(n){return '\u20b9'+Math.round(n).toLocaleString('en-IN');};
+  document.getElementById('lic-result').innerHTML=
+    '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;">'
+    +'<div style="background:#200808;border:1px solid #7f1d1d;border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:#7f1d1d;font-weight:700;">ANNUAL PREMIUM</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:#fca5a5;">'+fmtR(annualPrem)+'</div></div>'
+    +'<div style="background:#200808;border:1px solid #7f1d1d;border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:#7f1d1d;font-weight:700;">MONTHLY (APPROX)</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:#fca5a5;">'+fmtR(monthlyPrem)+'</div></div>'
+    +'<div style="background:#200808;border:1px solid #7f1d1d;border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:#7f1d1d;font-weight:700;">TOTAL PAID ('+term+'yr)</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:#f87171;">'+fmtR(totalPaid)+'</div></div>'
+    +(maturity>0?'<div style="background:#200808;border:1px solid #7f1d1d;border-radius:7px;padding:10px;text-align:center;">'
+    +'<div style="font-size:9px;color:#7f1d1d;font-weight:700;">EST. MATURITY</div>'
+    +'<div style="font-size:18px;font-weight:800;font-family:var(--fm);color:#4ade80;">'+fmtR(maturity)+'</div></div>':'')
+    +'</div>';
+}
 function openInlineGDP(btn){
   if(ACTIVE_PANEL==='gdp'){closeInlinePanel();return;}
   closeInlinePanel();ACTIVE_PANEL='gdp';
@@ -1156,23 +1886,22 @@ function fetchMarketaux(){if(!apiKey)return Promise.resolve([]);return Promise.a
 // ── BUILTIN ARTICLES ──
 // -- BUILTIN ARTICLES -- Updated Mar 27, 2026
 var BUILTIN=[
-  {r:'ind',h:'IPO Calendar: No fresh issues next week; Coal India subsidiary, 6 more companies set to debut',b:'The primary market anticipates a quiet week with no new IPOs. Focus shifts to the listing of Coal Indias subsidiary, CMPDI, on Monday. Six companies, including three mainboard and ',cat:'IPO',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/ipos/fpos/ipo-calendar-no-fresh-issues-next-week-coal-india-subsidiary-6-more-companies-set-to-debut/articleshow/129860106.cms',t:'17m ago',type:'builtin'},
-  {r:'ind',h:'From Wealth to Wisdom: Top traits that define great investors',b:'Amidst global market volatility, legendary investors like Warren Buffett offer timeless wisdom.  Key traits include independent thinking, emotional discipline, and a long-term pers',cat:'Markets',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/us-stocks/news/from-wealth-to-wisdom-top-traits-that-define-great-investors/articleshow/129859701.cms',t:'48m ago',type:'builtin'},
-  {r:'ind',h:'Oil spikes, markets swoon. Now what? A disciplined approach to the West Asia crisis',b:'Geopolitical shocks like the West Asian conflict can unsettle markets, but history shows resilience. For India, managing oil price spikes and inflation is key. Investors should sti',cat:'Energy',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/stocks/news/oil-spikes-markets-swoon-now-what-a-disciplined-approach-to-the-west-asia-crisis/articleshow/129859619.cms',t:'56m ago',type:'builtin'},
-  {r:'ind',h:'How GIFT City can reshape cross-border investing for domestic and international investors',b:'GIFT City is transforming global investing for Indians and attracting foreign capital. Its unique IFSC structure offers a unified regulatory framework. NRIs and foreign investors f',cat:'Markets',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/stocks/news/how-gift-city-can-reshape-cross-border-investing-for-domestic-and-international-investors/articleshow/129859580.cms',t:'1h ago',type:'builtin'},
-  {r:'ind',h:'Middle East tensions dent housing sales in Q1 2026 in India; demand dips 7% QoQ: ANAROCK',b:'Geopolitical tensions have impacted Indias housing market, with sales dipping 7% sequentially in Q1 2026, despite a 7% annual rise. New launches outpaced sales, leading to a 4% qua',cat:'Markets',src:'Economic Times',url:'https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/middle-east-tensions-dent-housing-sales-in-q1-2026-in-india-demand-dips-7-qoq-anarock/articleshow/129859522.cms',t:'1h ago',type:'builtin'},
-  {r:'ind',h:'Sensex, Nifty wobbly; Hind Zinc, SBI, Force Motors most active',b:'Asian Paints, SBI, Tata Motors, HUL and Maruti Suzuki are top gainers while ONGC, Axis Bank, MM, Bajaj Auto and Hero MotoCorp are major losers in the Sensex.',cat:'Stocks',src:'Moneycontrol',url:'http://www.moneycontrol.com/news/local-markets/sensex-nifty-wobbly-hind-zinc-sbi-force-motors-most-active_7577801.html',t:'3460d ago',type:'builtin'},
-  {r:'eu',h:'Asda boss rejects profiteering claims as petrol price tops 150p',b:'Motorists are facing higher fuel prices ahead of Easter break due to the conflict in the Middle East, the RAC says.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/cdxdnd87v78o?at_medium=RSS&at_campaign=rss',t:'12h ago',type:'builtin'},
-  {r:'eu',h:'Just Eat and Autotrader among firms investigated in fake reviews probe',b:'The UKs competition watchdog says it is looking at five firms in its investigation into misleading online reviews.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/cj37eeyz0epo?at_medium=RSS&at_campaign=rss',t:'18h ago',type:'builtin'},
-  {r:'eu',h:'Ripple of fear over Iran war hits consumer confidence',b:'A key survey indicates growing doubt among shoppers over prospects for the UK economy in the next year.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c8957kqqdg4o?at_medium=RSS&at_campaign=rss',t:'18h ago',type:'builtin'},
-  {r:'eu',h:'Lloyds bank reveals IT glitch affected almost half a million customers',b:'In a letter to the Treasury Select Committee, Lloyds apologised and said some compensation had been paid.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c70dqk2vjv8o?at_medium=RSS&at_campaign=rss',t:'19h ago',type:'builtin'},
-  {r:'eu',h:'How the Hormuz closure could affect food, medicines and smartphones',b:'The price of a wide range of goods - from food, to smartphones, to medicines - could be affected by the US-Israel war with Iran.',cat:'Markets',src:'BBC Business',url:'https://www.bbc.com/news/articles/c4gjxv5g19no?at_medium=RSS&at_campaign=rss',t:'1d ago',type:'builtin'},
-  {r:'usa',h:'Why one hedge fund veteran is urging investors to prepare for the worst',b:'DBis Andrew Beer suggests the markets crystal ball is broken.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/27/iran-to-economic-risks-markets-ability-to-forecast-world-in-question.html',t:'19h ago',type:'builtin'},
-  {r:'usa',h:'Private credits cracks open door for Wall Street banks comeback: The tug of war is just starting',b:'Wall Street banks may finally be getting a long-awaited opening to claw back market share from private credit lenders.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/27/wall-street-banks-private-credit-market-share-leveraged-loans.html',t:'1d ago',type:'builtin'},
-  {r:'usa',h:'Sen. Warren rips Federal Reserve chair pick Kevin Warsh: You have learned nothing from your failures',b:'Kevin Warshs nomination as chair of the Federal Reserve has been in limbo because of a criminal investigation of Chair Jerome Powell.',cat:'Central Bank',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/26/federal-reserve-kevin-walsh-elizabeth-warren-trump.html',t:'14h ago',type:'builtin'},
-  {r:'usa',h:'The research firm whose AI paper knocked the whole stock market is out with another big call',b:'Citrini Research said persistently high energy prices risk weighing on consumers and corporate earnings, creating a tough backdrop for equities.',cat:'Stocks',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/25/the-firm-whose-ai-paper-knocked-the-whole-market-is-out-with-another-big-call.html',t:'2d ago',type:'builtin'},
-  {r:'usa',h:'Former SEC Chair Jay Clayton says regulators would scrutinize trading ahead of Trump post',b:'Any move like that in advance of any announcement, the regulators are going to look at, said Clayton, former SEC chair.',cat:'Markets',src:'CNBC Markets',url:'https://www.cnbc.com/2026/03/25/former-sec-chair-jay-clayton-says-regulators-would-scrutinize-trading-ahead-of-trump-post.html',t:'2d ago',type:'builtin'},
-  {r:'usa',h:'Stocks Sink in Broad AI Rout Sparked by Chinas DeepSeek',b:'U.S. stocks were mostly lower, with the Nasdaq leading declines as makers of AI infrastructure suffered steep falls, many in the double digits. Nvidia was down 16%.',cat:'Stocks',src:'WSJ Markets',url:'https://www.wsj.com/articles/nikkei-may-rise-as-weak-yen-raises-earnings-hopes-776a8056?mod=rss_markets_main',t:'424d ago',type:'builtin'}
+  {r:'ind',h:'Sensex Falls 1,505 Points to 73,768 on Friday — Nifty Below 22,820',b:'BSE Sensex fell 2.00% (-1,505 points) to 73,767.99 and Nifty 50 dropped 1.09% to 22,818 on Friday March 27. Bears took control as weak global cues, resurging crude prices and escalating Iran tensions triggered broad-based selling. All sectoral indices closed in the red.',cat:'Markets',src:'Goodreturns',url:'https://www.goodreturns.in',t:'Today',type:'builtin'},
+  {r:'ind',h:'Sensex +1,205 to 75,273 on Wednesday March 25 — Rally on Iran Ceasefire Hopes',b:'Sensex surged 1,205 points to 75,273 and Nifty advanced 394 points to 23,306 on Wednesday. All sectoral indices closed green, led by Titan, UltraTech, L&T and Bajaj Finance (all +4%), as US-Iran ceasefire proposal through Pakistani intermediaries eased oil fears.',cat:'Markets',src:'Trading Economics',url:'https://tradingeconomics.com',t:'2 days ago',type:'builtin'},
+  {r:'ind',h:'Indian Market Closed Thursday for Ram Navami — Global Cues Absorbed All at Once Friday',b:'BSE and NSE were closed on March 26 for the Ram Navami holiday. This meant two days of accumulated global sell signals hit on Friday. Nifty Midcap fell 2.2% and Nifty Smallcap dropped 1.7% as broader market mirrored the benchmark decline.',cat:'Markets',src:'Liquide',url:'https://blog.liquide.life',t:'Today',type:'builtin'},
+  {r:'ind',h:'FII Sell ₹1,805 Cr on March 25 — India VIX Near 20 as Geopolitical Uncertainty Lingers',b:'Foreign Institutional Investors net sold ₹1,805.37 crore on March 25. DII countered with ₹5,429.78 crore in buying. India VIX rose sharply above 19, reflecting elevated near-term volatility. Analysts warn of range-bound trading between 22,450 and 23,850.',cat:'Markets',src:'Trendlyne',url:'https://trendlyne.com',t:'Today',type:'builtin'},
+  {r:'ind',h:'Rupee at 94.74 — Near All-Time Low as Oil Prices Resurge Above $110',b:'The Indian rupee weakened to 94.74 per dollar on Friday as Brent crude topped $110 per barrel. India has lost roughly $11.37 billion in FII outflows in March alone. India VIX remains elevated and rupee at record lows signals sustained macro pressure.',cat:'Currency',src:'NSE India',url:'https://www.nseindia.com',t:'Today',type:'builtin'},
+  {r:'ind',h:'OFSS +5% on $100M Banking Deal — HEG Surges 14% on GrafTech Price Hike',b:'Oracle Financial Services Software jumped over 5% after signing a $100M perpetual software licensing deal with a US global banking client. HEG surged ~14% on GrafTech International’s price hike of $600–1,200/tonne — HEG holds 25–30% ex-China market share.',cat:'Stocks',src:'Trendlyne',url:'https://trendlyne.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Brent Tops $110 on Friday — Iran Turns Back Chinese Vessels from Strait of Hormuz',b:'Brent crude jumped above $110/bbl as Iranian forces turned back Chinese container vessels from the Strait of Hormuz. Trump extended the strike deadline to April 6 but the "war premium" remains embedded in prices. European shares fell broadly on Friday, led by a pullback in defense stocks.',cat:'Energy',src:'CNBC',url:'https://www.cnbc.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'European Markets Fall Friday — DAX -1.3%, FTSE -1.33% on Iran Escalation',b:'European equities fell sharply on Friday. DAX dropped 1.3%, FTSE 100 lost 1.33%, and Euro Stoxx 600 declined 1.1%. Defense stocks retreated 2–3% on ceasefire speculation after a strong run-up since the conflict began. Tech and luxury goods were bright spots earlier in the week.',cat:'Markets',src:'TheStreet',url:'https://www.thestreet.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Iran Receives 15-Point US Peace Proposal via Pakistan — Rejection Likely',b:'The Associated Press reported that Iran received a 15-point US ceasefire proposal delivered through Pakistani intermediaries. Iran’s state media signalled rejection of the plan. Despite this, the existence of formal negotiations briefly pulled Brent below $97 earlier in the week before it resurged above $110 on Friday.',cat:'Geopolitics',src:'AP / Motley Fool',url:'https://www.fool.com',t:'Today',type:'builtin'},
+  {r:'eu',h:'Fed Rate Hike Probability Crosses 50% — Stagflation Fears Intensify',b:'Traders in futures markets pushed the probability of a Fed rate hike by end of 2026 above 50% for the first time, as surging energy costs and sticky inflation collide with slowing growth. Philadelphia Fed President Paulson cited elevated inflation and uncertainty as key policy concerns.',cat:'Economy',src:'CNBC',url:'https://www.cnbc.com',t:'Today',type:'builtin'},
+  {r:'usa',h:'Dow Enters Correction — Falls 793 Points to 45,167 on Thursday March 26',b:'Dow Jones tumbled 793 points (-1.73%) to 45,167 on Thursday, entering correction territory (10% below ATH). S&P 500 dropped 1.67% to 6,368.85 (7-month low), Nasdaq fell 2.15% to 20,948 — its 5th straight weekly decline. S&P is down 6.8% in March, worst since December 2022.',cat:'Markets',src:'CNBC',url:'https://www.cnbc.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Nasdaq Now 13% Below October Peak — Russell 2000 in Correction All Week',b:'Nasdaq Composite has fallen into correction at -13% from its October record. Russell 2000 entered correction the prior week. S&P 500 is the only major index not yet in correction territory. Amazon -3.85%, Salesforce -3.41%, Visa -3.38% led Thursday’s Dow decline.',cat:'Markets',src:'Trading Economics',url:'https://tradingeconomics.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Nvidia -2.2%, Microsoft -2.5%, Meta -12% Since Wednesday on Layoffs & Court Ruling',b:'Tech heavyweights remain under pressure. Nvidia dropped 2.2%, Microsoft fell 2.5%, Alphabet shed 2.5%. Meta has dropped 12% since Wednesday after announcing layoffs and a court ruling that labelled its social media as addictive. Tesla, Amazon and Oracle each fell over 3% on risk-off sentiment.',cat:'Technology',src:'Trading Economics',url:'https://tradingeconomics.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'Citi Cuts Equity to Neutral — "Most Negative Macro Risk Signals Triggering"',b:'Citigroup strategists cut equity allocation to neutral and reduced US small-cap overweight to zero, citing broad negative macro signals. "With most of our negative equity macro risk signals triggering, we continue to cut equity exposure," Citi wrote. Stagflation risk is the dominant theme.',cat:'Economy',src:'CNBC',url:'https://www.cnbc.com',t:'Yesterday',type:'builtin'},
+  {r:'usa',h:'iOS 27 to Let Siri Hand Off to Claude, Gemini — Apple +1% Pre-Market Friday',b:'Apple is opening up Siri in iOS 27 to outside AI assistants including Anthropic’s Claude, Google’s Gemini and others. Users will be able to route questions directly to third-party AI chatbots. Apple stock rose ~1% ahead of the market open on Friday, bucking broader weakness.',cat:'Technology',src:'Motley Fool',url:'https://www.fool.com',t:'Today',type:'builtin'},
+  {r:'usa',h:'Gold at $4,457 — Up 35% YTD and 1.09% Friday as Safe-Haven Demand Returns',b:'Gold climbed to $4,457/oz on Friday, up 1.09%. Gold is up 35% year-to-date and up from lows as safe-haven demand builds again despite earlier three-week slide. S&P 500 is down 5.8% YTD, Nasdaq -8.1%, while oil (+28%) and gold (+35%) are the only major asset classes in positive territory for 2026.',cat:'Commodities',src:'Yahoo Finance',url:'https://finance.yahoo.com',t:'Today',type:'builtin'}
 ];
 
 function colorMarketTables(){document.querySelectorAll('.mkt-tbl tr').forEach(function(tr){var c=tr.cells[2];if(!c)return;var t=c.textContent;tr.classList.remove('row-up','row-dn');if(t.indexOf('+')>=0)tr.classList.add('row-up');else if(t.indexOf('-')>=0)tr.classList.add('row-dn');});}
@@ -1678,6 +2407,203 @@ switchHub = function(tab,el){
 setTimeout(function(){renderSaved();quickConvert();},400);
 
 
+// ── EMI CALCULATOR ──
+var EMI_DEFAULTS={home:{rate:8.5,tenure:20,hint:'Typical home loan: 8.5–9.5% · SBI 8.50%'},car:{rate:9.15,tenure:5,hint:'Typical car loan: 9.0–12.0% · SBI 9.15%'},personal:{rate:11.0,tenure:3,hint:'Typical personal loan: 11–18% · HDFC 11.00%'},education:{rate:8.15,tenure:10,hint:'Typical education loan: 8.15–10.5% · SBI 8.15%'}};
+function emiTypeChange(){
+  var t=document.getElementById('emi-type').value;
+  var d=EMI_DEFAULTS[t];
+  if(d){
+    document.getElementById('emi-rate').value=d.rate;
+    document.getElementById('emi-tenure').value=d.tenure;
+    document.getElementById('emi-rate-hint').textContent=d.hint;
+    document.getElementById('emi-unit').value='y';
+  }
+  document.getElementById('emi-result').innerHTML='<div style="text-align:center;color:var(--t3);font-size:11px;">Click Calculate EMI</div>';
+}
+function calcEMI(){
+  var P=parseFloat(document.getElementById('emi-principal').value)||0;
+  var r=parseFloat(document.getElementById('emi-rate').value)||0;
+  var t=parseFloat(document.getElementById('emi-tenure').value)||0;
+  var unit=document.getElementById('emi-unit').value;
+  var n=unit==='y'?t*12:t;
+  var ltype=document.getElementById('emi-type').value;
+  if(!P||!r||!n){document.getElementById('emi-result').innerHTML='<div style="color:var(--RD);font-size:12px;">Please fill all fields.</div>';return;}
+  var mr=r/1200;
+  var emi=P*mr*Math.pow(1+mr,n)/(Math.pow(1+mr,n)-1);
+  var total=emi*n, interest=total-P;
+  var pct=Math.round((interest/total)*100);
+  var lclr={home:'var(--EU)',car:'var(--DO)',personal:'var(--IN)',education:'var(--GR)'}[ltype]||'var(--AC)';
+  document.getElementById('emi-result').innerHTML=
+    '<div style="width:100%;">'
+    +'<div style="text-align:center;margin-bottom:14px;">'
+    +'<div style="font-size:10px;color:var(--t3);font-weight:700;letter-spacing:1px;margin-bottom:4px;">MONTHLY EMI</div>'
+    +'<div style="font-size:32px;font-weight:800;font-family:var(--fm);color:'+lclr+';">₹'+Math.round(emi).toLocaleString('en-IN')+'</div>'
+    +'<div style="font-size:10px;color:var(--t3);">for '+n+' months</div></div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px;">'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">PRINCIPAL</div><div style="font-size:12px;font-weight:800;font-family:var(--fm);color:var(--DO);">₹'+Math.round(P).toLocaleString('en-IN')+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">TOTAL INTEREST</div><div style="font-size:12px;font-weight:800;font-family:var(--fm);color:var(--RD);">₹'+Math.round(interest).toLocaleString('en-IN')+'</div></div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">TOTAL PAYMENT</div><div style="font-size:12px;font-weight:800;font-family:var(--fm);color:var(--tx);">₹'+Math.round(total).toLocaleString('en-IN')+'</div></div>'
+    +'</div>'
+    +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;">'
+    +'<div style="font-size:9px;font-weight:700;color:var(--t2);margin-bottom:5px;">PAYMENT BREAKUP</div>'
+    +'<div style="height:10px;background:var(--b1);border-radius:5px;overflow:hidden;display:flex;">'
+    +'<div style="height:10px;width:'+(100-pct)+'%;background:'+lclr+';border-radius:5px 0 0 5px;"></div>'
+    +'<div style="height:10px;width:'+pct+'%;background:var(--RD);border-radius:0 5px 5px 0;"></div></div>'
+    +'<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--t3);margin-top:4px;">'
+    +'<span style="color:'+lclr+';">■ Principal '+(100-pct)+'%</span>'
+    +'<span style="color:var(--RD);">■ Interest '+pct+'%</span></div>'
+    +'</div></div>';
+}
+
+// ── INCOME TAX CALCULATOR ──
+function calcNewTax(income){
+  // New regime FY2025-26 — standard deduction ₹75,000 applied
+  var taxable=Math.max(0,income-75000);
+  var tax=0;
+  var slabs=[[400000,0],[800000,0.05],[1200000,0.10],[1600000,0.15],[2000000,0.20],[2400000,0.25],[Infinity,0.30]];
+  var prev=0;
+  for(var i=0;i<slabs.length;i++){
+    var upper=slabs[i][0], rate=slabs[i][1];
+    if(taxable<=prev) break;
+    tax+=(Math.min(taxable,upper)-prev)*rate;
+    prev=upper;
+  }
+  // Rebate 87A: if income <= 12,00,000, tax = 0
+  if(income<=1200000) tax=0;
+  return tax;
+}
+function calcOldTax(income, d80c, d80d, dhra, age){
+  var stdDed=50000;
+  var taxable=Math.max(0,income-stdDed-Math.min(d80c,150000)-Math.min(d80d,25000)-dhra);
+  var basic=age==='supersenior'?500000:age==='senior'?300000:250000;
+  var tax=0;
+  if(taxable<=basic) return 0;
+  if(taxable<=500000) tax=(taxable-basic)*0.05;
+  else if(taxable<=1000000) tax=(500000-basic)*0.05+(taxable-500000)*0.20;
+  else tax=(500000-basic)*0.05+500000*0.20+(taxable-1000000)*0.30;
+  // Rebate 87A: income <= 5L
+  if(income<=500000) tax=0;
+  return tax;
+}
+function calcTax(){
+  var income=parseFloat(document.getElementById('tax-income').value)||0;
+  var age=document.getElementById('tax-age').value;
+  var d80c=parseFloat(document.getElementById('tax-80c').value)||0;
+  var d80d=parseFloat(document.getElementById('tax-80d').value)||0;
+  var dhra=parseFloat(document.getElementById('tax-hra').value)||0;
+  if(!income){document.getElementById('tax-result').innerHTML='<div style="color:var(--RD);font-size:12px;">Enter your annual income.</div>';return;}
+  var newTax=calcNewTax(income);
+  var oldTax=calcOldTax(income,d80c,d80d,dhra,age);
+  var newSur=newTax>5000000?newTax*0.25:newTax>2000000?newTax*0.15:newTax>1000000?newTax*0.10:0;
+  var oldSur=oldTax>5000000?oldTax*0.25:oldTax>2000000?oldTax*0.15:oldTax>1000000?oldTax*0.10:0;
+  var newTotal=Math.round((newTax+newSur)*1.04);
+  var oldTotal=Math.round((oldTax+oldSur)*1.04);
+  var saving=oldTotal-newTotal;
+  var better=saving>=0?'new':'old';
+  var fmtINR2=function(n){return '₹'+Math.round(n).toLocaleString('en-IN');};
+  document.getElementById('tax-result').innerHTML=
+    '<div style="width:100%;">'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">'
+    // New Regime card
+    +'<div style="background:'+(better==='new'?'#dcfce7':'var(--s1)')+';border:2px solid '+(better==='new'?'#16a34a':'var(--b1)')+';border-radius:9px;padding:14px;position:relative;">'
+    +(better==='new'?'<div style="position:absolute;top:8px;right:8px;background:#16a34a;color:#fff;font-size:8px;font-weight:700;padding:2px 7px;border-radius:20px;">✓ BETTER</div>':'')
+    +'<div style="font-size:10px;font-weight:700;color:#16a34a;margin-bottom:8px;">📗 NEW REGIME</div>'
+    +'<div style="font-size:22px;font-weight:800;font-family:var(--fm);color:#16a34a;margin-bottom:4px;">'+fmtINR2(newTotal)+'</div>'
+    +'<div style="font-size:9px;color:var(--t3);">incl. surcharge + 4% cess</div>'
+    +'<div style="margin-top:8px;font-size:10px;color:var(--t2);border-top:1px solid var(--b1);padding-top:8px;">'
+    +'<div style="display:flex;justify-content:space-between;"><span>Base Tax</span><span style="font-family:var(--fm);">'+fmtINR2(newTax)+'</span></div>'
+    +'<div style="display:flex;justify-content:space-between;"><span>Std. Deduction</span><span style="font-family:var(--fm);">₹75,000</span></div>'
+    +'<div style="display:flex;justify-content:space-between;"><span>Eff. Tax Rate</span><span style="font-family:var(--fm);font-weight:700;">'+((income>0?(newTotal/income)*100:0).toFixed(1))+'%</span></div>'
+    +'</div></div>'
+    // Old Regime card
+    +'<div style="background:'+(better==='old'?'#eff6ff':'var(--s1)')+';border:2px solid '+(better==='old'?'#2563eb':'var(--b1)')+';border-radius:9px;padding:14px;position:relative;">'
+    +(better==='old'?'<div style="position:absolute;top:8px;right:8px;background:#2563eb;color:#fff;font-size:8px;font-weight:700;padding:2px 7px;border-radius:20px;">✓ BETTER</div>':'')
+    +'<div style="font-size:10px;font-weight:700;color:#2563eb;margin-bottom:8px;">📘 OLD REGIME</div>'
+    +'<div style="font-size:22px;font-weight:800;font-family:var(--fm);color:#2563eb;margin-bottom:4px;">'+fmtINR2(oldTotal)+'</div>'
+    +'<div style="font-size:9px;color:var(--t3);">incl. surcharge + 4% cess</div>'
+    +'<div style="margin-top:8px;font-size:10px;color:var(--t2);border-top:1px solid var(--b1);padding-top:8px;">'
+    +'<div style="display:flex;justify-content:space-between;"><span>Base Tax</span><span style="font-family:var(--fm);">'+fmtINR2(oldTax)+'</span></div>'
+    +'<div style="display:flex;justify-content:space-between;"><span>Deductions Used</span><span style="font-family:var(--fm);">'+fmtINR2(50000+Math.min(d80c,150000)+Math.min(d80d,25000)+dhra)+'</span></div>'
+    +'<div style="display:flex;justify-content:space-between;"><span>Eff. Tax Rate</span><span style="font-family:var(--fm);font-weight:700;">'+((income>0?(oldTotal/income)*100:0).toFixed(1))+'%</span></div>'
+    +'</div></div>'
+    +'</div>'
+    +'<div style="background:'+(better==='new'?'#dcfce7':'#eff6ff')+';border:1px solid '+(better==='new'?'#16a34a':'#2563eb')+';border-radius:8px;padding:10px 14px;font-size:12px;font-weight:700;color:'+(better==='new'?'#15803d':'#1d4ed8')+';text-align:center;">'
+    +(Math.abs(saving)>0?'💡 '+(better==='new'?'New':'Old')+' Regime saves you '+fmtINR2(Math.abs(saving))+' per year':'💡 Both regimes result in equal tax')
+    +'</div>'
+    +'<div style="font-size:9px;color:var(--t3);text-align:center;margin-top:6px;">Indicative only · Consult a CA for exact tax liability · Surcharge & cess included</div>'
+    +'</div>';
+}
+
+// ── POST OFFICE CALCULATOR ──
+function poSchemeChange(){
+  var scheme=document.getElementById('po-scheme').value;
+  document.getElementById('po-ppf-inputs').style.display=scheme==='ppf'?'block':'none';
+  document.getElementById('po-scss-inputs').style.display=scheme==='scss'?'block':'none';
+  document.getElementById('po-pomis-inputs').style.display=scheme==='pomis'?'block':'none';
+  // Update tips panel
+  var tips={
+    ppf:'<div>• EEE: Invest, earn &amp; withdraw — all tax-free</div><div>• Section 80C deduction up to ₹1.5L/yr</div><div>• Partial withdrawal after 7 years</div><div>• Loan facility after 3 years</div><div>• Backed by Govt. of India — zero risk</div>',
+    scss:'<div>• Highest guaranteed return for seniors: 8.2%</div><div>• Interest paid quarterly to linked account</div><div>• Max ₹30 lakh per account (joint: ₹30L each)</div><div>• Premature closure allowed after 1 year</div><div>• Section 80C deduction · TDS applicable</div>',
+    pomis:'<div>• Fixed monthly income for 5 years</div><div>• Single max ₹9 lakh · Joint max ₹15 lakh</div><div>• No TDS deducted at source</div><div>• Premature closure allowed after 1 year</div><div>• No Section 80C benefit</div>'
+  };
+  var tipEl=document.getElementById('po-tips');
+  if(tipEl) tipEl.innerHTML=tips[scheme]||tips.ppf;
+  document.getElementById('po-result').innerHTML='<div style="text-align:center;color:var(--t3);font-size:11px;">Click Calculate to see results</div>';
+}
+
+function fmtINR(n){return '₹'+Math.round(n).toLocaleString('en-IN');}
+
+function calcPO(){
+  var scheme=document.getElementById('po-scheme').value;
+  var res=document.getElementById('po-result');
+
+  if(scheme==='ppf'){
+    var annual=parseFloat(document.getElementById('ppf-annual').value)||0;
+    var yrs=Math.min(15,Math.max(1,parseInt(document.getElementById('ppf-years').value)||15));
+    if(!annual){res.innerHTML='<div style="color:var(--RD);font-size:12px;">Enter annual deposit.</div>';return;}
+    var rate=0.071, bal=0;
+    for(var y=0;y<yrs;y++) bal=(bal+annual)*(1+rate);
+    var invested=annual*yrs, interest=bal-invested;
+    res.innerHTML='<div style="font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1px;text-align:center;margin-bottom:10px;">PPF MATURITY — '+yrs+' YEARS</div>'
+      +'<div style="text-align:center;margin-bottom:12px;"><div style="font-size:28px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtINR(bal)+'</div>'
+      +'<div style="font-size:9px;color:var(--t3);margin-top:2px;">Tax-free maturity (EEE)</div></div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">INVESTED</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtINR(invested)+'</div></div>'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">INTEREST EARNED</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtINR(interest)+'</div></div>'
+      +'</div><div style="margin-top:8px;background:var(--s1);border:1px solid var(--INb);border-radius:7px;padding:7px 10px;font-size:10px;color:var(--IN);">📮 Annual deposit: '+fmtINR(annual)+' · Rate: 7.1% p.a. · Compounded yearly</div>';
+
+  } else if(scheme==='scss'){
+    var principal=parseFloat(document.getElementById('scss-principal').value)||0;
+    if(!principal){res.innerHTML='<div style="color:var(--RD);font-size:12px;">Enter deposit amount.</div>';return;}
+    principal=Math.min(principal,3000000);
+    var rate=0.082, qtrInterest=principal*(rate/4);
+    var totalInterest=qtrInterest*20, maturity=principal+totalInterest;
+    res.innerHTML='<div style="font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1px;text-align:center;margin-bottom:10px;">SCSS — 5 YEAR PAYOUT</div>'
+      +'<div style="text-align:center;margin-bottom:12px;"><div style="font-size:28px;font-weight:800;font-family:var(--fm);color:var(--RU);">'+fmtINR(qtrInterest)+'<span style="font-size:12px;font-weight:600;color:var(--t2);"> /qtr</span></div>'
+      +'<div style="font-size:9px;color:var(--t3);margin-top:2px;">Quarterly interest payout</div></div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">PRINCIPAL BACK</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtINR(principal)+'</div></div>'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">TOTAL INTEREST</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtINR(totalInterest)+'</div></div>'
+      +'</div><div style="background:var(--INd);border:1px solid var(--INb);border-radius:7px;padding:7px 10px;font-size:10px;color:var(--IN);">👴 Rate: 8.2% p.a. · 5 yrs · Total received: '+fmtINR(maturity)+'</div>';
+
+  } else if(scheme==='pomis'){
+    var principal=parseFloat(document.getElementById('pomis-principal').value)||0;
+    var accType=document.getElementById('pomis-type').value;
+    var maxAmt=accType==='joint'?1500000:900000;
+    principal=Math.min(principal,maxAmt);
+    if(!principal){res.innerHTML='<div style="color:var(--RD);font-size:12px;">Enter deposit amount.</div>';return;}
+    var rate=0.074, monthlyIncome=principal*(rate/12);
+    var totalIncome=monthlyIncome*60;
+    res.innerHTML='<div style="font-size:10px;font-weight:700;color:var(--t3);letter-spacing:1px;text-align:center;margin-bottom:10px;">POMIS — MONTHLY INCOME</div>'
+      +'<div style="text-align:center;margin-bottom:12px;"><div style="font-size:28px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtINR(monthlyIncome)+'<span style="font-size:12px;font-weight:600;color:var(--t2);"> /month</span></div>'
+      +'<div style="font-size:9px;color:var(--t3);margin-top:2px;">Fixed monthly payout for 5 years</div></div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">PRINCIPAL BACK</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--DO);">'+fmtINR(principal)+'</div></div>'
+      +'<div style="background:var(--s1);border:1px solid var(--b1);border-radius:7px;padding:8px;text-align:center;"><div style="font-size:9px;color:var(--t3);">TOTAL INCOME (5yr)</div><div style="font-size:13px;font-weight:800;font-family:var(--fm);color:var(--GR);">'+fmtINR(totalIncome)+'</div></div>'
+      +'</div><div style="background:var(--EUd);border:1px solid var(--EUb);border-radius:7px;padding:7px 10px;font-size:10px;color:var(--EU);">📅 Rate: 7.4% p.a. · '+accType+' a/c · Max: '+fmtINR(maxAmt)+'</div>';
+  }
+}
+
 // ── F1: LIVE MARKET DATA (Yahoo Finance via allorigins proxy) ──
 var LIVE_MKT_IDS={
   'SENSEX':'^BSESN','NIFTY':'^NSEI','S&P500':'^GSPC','NASDAQ':'^IXIC',
@@ -1771,11 +2697,4 @@ if('serviceWorker' in navigator){
     "  if(e.request.method!=='GET')return;",
     "  e.respondWith(caches.match(e.request).then(cached=>{",
     "    const net=fetch(e.request).then(res=>{",
-    "      if(res&&res.ok&&res.type==='basic'){const c=res.clone();caches.open(CACHE).then(cache=>cache.put(e.request,c));}",
-    "      return res;",
-    "    }).catch(()=>cached);",
-    "    return cached||net;",
-    "  }));",
-    "});"
-  ].join('\n');
-  var blob=new B
+    "      if(res&&res.ok&
